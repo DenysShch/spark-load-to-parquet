@@ -40,7 +40,7 @@ object collectToParquet {
     val lines = sc.textFile(dirs)//.repartition(numPart)//.coalesce(fileCoalesce
     val rowRDD = lines.map(x => x.split("\\|", -1)).map(x => {Row.fromSeq(x)})
     val tempDF = sqlc.createDataFrame(rowRDD, schema)
-    val newDF = tempDF
+    tempDF
       .columns
       .foldLeft(tempDF) {
        (table, colName) => typeSchema(colName).toString match {
@@ -51,10 +51,7 @@ object collectToParquet {
           case _        =>  throw new NoSuchElementException
         }
       }
-    numPart match {
-      case 999 => newDF.write.mode(SaveMode.Append).parquet(outputPath)                                                   //add additional case?!?
-      case _ =>  newDF.repartition(numPart).write.mode(SaveMode.Append).parquet(outputPath)
-    }
+      .repartition(numPart).write.mode(SaveMode.Append).parquet(outputPath)
   }
 
   def hadoopListFolders(directoryName: String, fs:FileSystem, buff:Int):List[String] = {
