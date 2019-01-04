@@ -74,10 +74,7 @@ object collectToParquet {
 
   def createPartitionDir(tableName:String, fs:FileSystem, sch:String, numPart:Int):String ={
     val mainPath = "hdfs:///user/hive/warehouse/"+ sch + ".db/"  //
-    val folderPattern = numPart match {
-      case 999 => "yyyyMMddHHmm"
-      case _ =>  "yyyyMMddHH"
-    }
+    val folderPattern = "yyyyMMddHH"
     val timeFormat = new SimpleDateFormat(folderPattern)
     val now = timeFormat.format(Calendar.getInstance.getTime)
     val result = mainPath + tableName.toLowerCase + "/dt=" +  now  //Linux
