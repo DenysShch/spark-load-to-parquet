@@ -1,0 +1,791 @@
+<data>
+    <table tablename = "CDR_AIU_MOC" path = "hdfs:///local-filestream/CDR_AIU_MOC" schema="cdr"  numPartitions="2" coalesce="2" fileBufferSizeInMB="2000">
+        <field name="cdrid" type ="string" />
+        <field name="sysid" type ="int" length = "8" />
+        <field name="orgcdrid" type ="string" length = "20" />
+        <field name="abiscdrid" type ="string" length = "20" />
+        <field name="acdrid" type ="string" length = "20" />
+        <field name="refid" type ="bigint" length = "40" />
+        <field name="zoneid" type ="string" length = "10" />
+        <field name="poolid" type ="int" length = "10" />
+        <field name="sccpid" type ="string" length = "20" />
+        <field name="starttime" type ="int" length = "10" />
+        <field name="millisec" type ="int" length = "3" />
+        <field name="abis" type ="bigint" length = "1" />
+        <field name="srvstat" type ="bigint" length = "1" />
+        <field name="cdrstat" type ="bigint" length = "1" />
+        <field name="ni" type ="int" length = "1" />
+        <field name="opc" type ="int" length = "8" />
+        <field name="dpc" type ="int" length = "8" />
+        <field name="linksetid" type ="bigint" length = "1" />
+        <field name="access_type" type ="bigint" length = "1" />
+        <field name="srvtype" type ="bigint" length = "1" />
+        <field name="chtype" type ="int" length = "3" />
+        <field name="cicsysno" type ="string" length = "4" />
+        <field name="cictsno" type ="string" length = "3" />
+        <field name="codec" type ="bigint" length = "2" />
+        <field name="ipaddr" type ="int" length = "10" />
+        <field name="port" type ="int" length = "5" />
+        <field name="nsap" type ="string" length = "24" />
+        <field name="bindingid" type ="string" length = "24" />
+        <field name="hold" type ="bigint" length = "1" />
+        <field name="imsi" type ="bigint" length = "63" />
+        <field name="imei" type ="bigint" length = "17" />
+        <field name="tmsi" type ="string" length = "9" />
+        <field name="calledno" type ="bigint" length = "63" />
+        <field name="cldtype" type ="bigint" length = "1" />
+        <field name="calledusrno" type ="int" length = "63" />
+        <field name="callerno" type ="int" length = "9" />
+        <field name="mcc" type ="int" length = "3" />
+        <field name="mnc" type ="int" length = "3" />
+        <field name="firstlac" type ="int" length = "4" />
+        <field name="firstci" type ="int" length = "4" />
+        <field name="lastlac" type ="int" length = "4" />
+        <field name="lastci" type ="string" length = "4" />
+        <field name="servicekey" type ="string" length = "10" />
+        <field name="scpno" type ="bigint" length = "24" />
+        <field name="capversion" type ="string" length = "1" />
+        <field name="firsttei" type ="string" length = "3" />
+        <field name="firstchannel" type ="string" length = "3" />
+        <field name="sumrxlevlul" type ="string" length = "8BYTE" />
+        <field name="sumrxlevldl" type ="string" length = "8BYTE" />
+        <field name="sumrxqualul" type ="string" length = "8BYTE" />
+        <field name="sumrxqualdl" type ="string" length = "8BYTE" />
+        <field name="sumbspwr" type ="string" length = "8BYTE" />
+        <field name="summspwr" type ="string" length = "8BYTE" />
+        <field name="sumta" type ="string" length = "8BYTE" />
+        <field name="totalmrno" type ="string" length = "4BYTE" />
+        <field name="totalmrcount" type ="string" length = "4BYTE" />
+        <field name="totalfullratemrno" type ="string" length = "4BYTE" />
+        <field name="totalhalfratemrno" type ="string" length = "4BYTE" />
+        <field name="sumrxquaul0" type ="string" length = "4BYTE" />
+        <field name="sumrxquaul1" type ="string" length = "4BYTE" />
+        <field name="sumrxquaul2" type ="string" length = "4BYTE" />
+        <field name="sumrxquaul3" type ="string" length = "4BYTE" />
+        <field name="sumrxquaul4" type ="string" length = "4BYTE" />
+        <field name="sumrxquaul5" type ="string" length = "4BYTE" />
+        <field name="sumrxquaul6" type ="string" length = "4BYTE" />
+        <field name="sumrxquaul7" type ="string" length = "4BYTE" />
+        <field name="sumrxquadl0" type ="string" length = "4BYTE" />
+        <field name="sumrxquadl1" type ="string" length = "4BYTE" />
+        <field name="sumrxquadl2" type ="string" length = "4BYTE" />
+        <field name="sumrxquadl3" type ="string" length = "4BYTE" />
+        <field name="sumrxquadl4" type ="string" length = "4BYTE" />
+        <field name="sumrxquadl5" type ="string" length = "4BYTE" />
+        <field name="sumrxquadl6" type ="string" length = "4BYTE" />
+        <field name="sumrxquadl7" type ="string" length = "4BYTE" />
+        <field name="ta01count" type ="string" length = "4BYTE" />
+        <field name="rxlevel_down" type ="string" length = "4BYTE" />
+        <field name="weak_coverage" type ="string" length = "4BYTE" />
+        <field name="over_coverage" type ="string" length = "4BYTE" />
+        <field name="imbalance" type ="string" length = "4BYTE" />
+        <field name="interference" type ="string" length = "4BYTE" />
+        <field name="imm_ass_comd_time" type ="string" length = "10" />
+        <field name="imm_ass_rej_time" type ="string" length = "10" />
+        <field name="imm_ass_comp_time" type ="string" length = "10" />
+        <field name="cm_srvacp_time" type ="string" length = "10" />
+        <field name="auth_req_time" type ="string" length = "10" />
+        <field name="auth_rsp_time" type ="string" length = "10" />
+        <field name="identity_req_time" type ="int" length = "10" />
+        <field name="identity_rsp_time" type ="int" length = "10" />
+        <field name="ciph_req_time" type ="int" length = "10" />
+        <field name="ciph_rsp_time" type ="int" length = "10" />
+        <field name="setup_time" type ="int" length = "10" />
+        <field name="call_proc_time" type ="int" length = "10" />
+        <field name="assn_time" type ="int" length = "10" />
+        <field name="ass_comd_time" type ="string" length = "10" />
+        <field name="assn_cmpt_time" type ="int" length = "10" />
+        <field name="alert_time" type ="int" length = "10" />
+        <field name="answer_time" type ="int" length = "10" />
+        <field name="disconn_time" type ="int" length = "10" />
+        <field name="rel_time" type ="int" length = "10" />
+        <field name="relcmp_time" type ="int" length = "10" />
+        <field name="clr_cmd_time" type ="int" length = "10" />
+        <field name="clr_cmp_time" type ="int" length = "10" />
+        <field name="connection_failure_time" type ="string" length = "10" />
+        <field name="clear_req_time" type ="string" length = "10" />
+        <field name="end_time" type ="int" length = "10" />
+        <field name="ppd" type ="int" length = "2" />
+        <field name="rel_phase" type ="int" length = "3" />
+        <field name="pd" type ="int" length = "2" />
+        <field name="firfailmsg" type ="int" length = "3" />
+        <field name="cause" type ="int" length = "3" />
+        <field name="homemcc" type ="int" length = "5" />
+        <field name="homemnc" type ="int" length = "5" />
+        <field name="homeproid" type ="string" length = "10" />
+        <field name="homeareaid" type ="string" length = "10" />
+        <field name="destcc" type ="string" length = "10" />
+        <field name="destareaid" type ="string" length = "10" />
+        <field name="destnumtype" type ="string" length = "10" />
+        <field name="destoprid" type ="int" length = "10" />
+        <field name="encrypt_version" type ="string" length = "5" />
+        <field name="reserved1" type ="string" length = "20" />
+        <field name="reserved2" type ="string" length = "20" />
+        <field name="reserved3" type ="string" length = "20" />
+        <field name="reserved4" type ="int" length = "20" />
+        <field name="reserved5" type ="int" length = "10" />
+        <field name="reserved6" type ="string" length = "10" />
+        <field name="reserved7" type ="int" length = "10" />
+        <field name="reserved8" type ="bigint" length = "10" />
+        <field name="filelocation" type ="string" length = "20" />
+        <field name="offset_dsi" type ="int" length = "12" />
+        <field name="probeid" type ="int" length = "10" />
+        <field name="probeid2" type ="string" length = "10" />
+        <field name="groupid" type ="string" length = "5" />
+        <field name="lnkopc" type ="int" length = "8" />
+        <field name="lnkdpc" type ="int" length = "8" />
+        <field name="lnksrcip" type ="int" length = "10" />
+        <field name="lnksrcport" type ="int" length = "5" />
+        <field name="lnkdestip" type ="int" length = "10" />
+        <field name="lnkdestport" type ="int" length = "5" />
+        <field name="vasservicetype" type ="bigint" length = "3" />
+        <field name="afirstxdrid" type ="string" length = "20" />
+        <field name="callduration" type ="int" length = "10" />
+        <field name="firfailtime" type ="int" length = "10" />
+        <field name="progress_time" type ="int" length = "10" />
+        <field name="layer1id" type ="bigint" length = "4" />
+        <field name="layer2id" type ="string" length = "4" />
+        <field name="layer3id" type ="string" length = "4" />
+        <field name="layer4id" type ="string" length = "4" />
+        <field name="layer5id" type ="string" length = "4" />
+        <field name="layer6id" type ="string" length = "4" />
+        <field name="destccid" type ="int" length = "10" />
+        <field name="destnumid" type ="string" length = "10" />
+        <field name="callservice" type ="string" length = "4" />
+        <field name="csfbind" type ="bigint" length = "2" />
+        <field name="fallbacktime" type ="string" length = "10" />
+        <field name="tai" type ="string" length = "19" />
+        <field name="ecgi" type ="string" length = "20" />
+        <field name="mme_id" type ="string" length = "10" />
+        <field name="csfb_ref_flag" type ="bigint" length = "2" />
+        <field name="lastbscrnc" type ="int" length = "8" />
+        <field name="lastaccesstype" type ="bigint" length = "1" />
+        <field name="firsthotime" type ="int" length = "10" />
+        <field name="lastpoolid" type ="int" length = "10" />
+        <field name="announceflag" type ="bigint" length = "2" />
+        <field name="e2efirfailprot" type ="int" length = "10" />
+        <field name="e2efirfailpd" type ="int" length = "3" />
+        <field name="e2efirfailmsg" type ="int" length = "3" />
+        <field name="e2efirfailcause" type ="int" length = "10" />
+        <field name="e2efirfailside" type ="bigint" length = "1" />
+        <field name="connect_time" type ="int" length = "10" />
+        <field name="rabrel_time" type ="string" length = "10" />
+        <field name="firtchtime" type ="int" length = "10" />
+        <field name="dropcause" type ="string" length = "3" />
+        <field name="drd" type ="string" length = "1" />
+        <field name="first_lac" type ="string" length = "4" />
+        <field name="first_ci" type ="string" length = "4" />
+        <field name="first_rat" type ="string" length = "1" />
+        <field name="last_lac" type ="string" length = "4" />
+        <field name="last_ci" type ="string" length = "4" />
+        <field name="last_rat" type ="string" length = "1" />
+        <field name="first_longitude" type ="string" length = "10" />
+        <field name="first_latitude" type ="string" length = "10" />
+        <field name="first_altitude" type ="string" length = "5" />
+        <field name="first_rasterlongitude" type ="string" length = "10" />
+        <field name="first_rasterlatitude" type ="string" length = "10" />
+        <field name="first_rasteraltitude" type ="string" length = "5" />
+        <field name="first_frequencyspot" type ="string" length = "5" />
+        <field name="first_clutter" type ="string" length = "5" />
+        <field name="first_userbehavior" type ="string" length = "3" />
+        <field name="first_speed" type ="string" length = "5" />
+        <field name="first_credibility" type ="string" length = "3" />
+        <field name="last_longitude" type ="string" length = "10" />
+        <field name="last_latitude" type ="string" length = "10" />
+        <field name="last_altitude" type ="string" length = "5" />
+        <field name="last_rasterlongitude" type ="string" length = "10" />
+        <field name="last_rasterlatitude" type ="string" length = "10" />
+        <field name="last_rasteraltitude" type ="string" length = "5" />
+        <field name="last_frequencyspot" type ="string" length = "5" />
+        <field name="last_clutter" type ="string" length = "5" />
+        <field name="last_userbehavior" type ="string" length = "3" />
+        <field name="last_speed" type ="string" length = "5" />
+        <field name="last_credibility" type ="string" length = "3" />
+        <field name="old_tmsi" type ="string" length = "9" />
+        <field name="auth_sec_req_time" type ="string" length = "10" />
+        <field name="classmark_req_time" type ="string" length = "10" />
+        <field name="classmark_update_time" type ="int" length = "10" />
+        <field name="opprelcgi" type ="string" length = "20" />
+        <field name="prepaid_flag" type ="string" length = "1" />
+        <field name="lastmnc" type ="int" length = "3" />
+        <field name="fwdno" type ="string" length = "255" />
+        <field name="emlpp_priority" type ="string" length = "3" />
+        <field name="na" type ="int" length = "3" />
+    </table>
+    <table tablename = "CDR_AIU_MTC"  path = "hdfs:///local-filestream/CDR_AIU_MTC" schema="cdr"  numPartitions="2" coalesce="2" fileBufferSizeInMB="2000">
+        <field name="sysid" type ="int" length = "" />
+        <field name="orgcdrid" type ="string" length = "" />
+        <field name="cdrid" type ="string" length = "" />
+        <field name="abiscdrid" type ="string" length = "" />
+        <field name="acdrid" type ="string" length = "" />
+        <field name="refid" type ="bigint" length = "" />
+        <field name="zoneid" type ="string" length = "" />
+        <field name="poolid" type ="int" length = "" />
+        <field name="sccpid" type ="string" length = "" />
+        <field name="starttime" type ="int" length = "" />
+        <field name="millisec" type ="int" length = "" />
+        <field name="abis" type ="bigint" length = "" />
+        <field name="srvstat" type ="bigint" length = "" />
+        <field name="cdrstat" type ="bigint" length = "" />
+        <field name="ni" type ="int" length = "" />
+        <field name="opc" type ="int" length = "" />
+        <field name="dpc" type ="int" length = "" />
+        <field name="access_type" type ="bigint" length = "" />
+        <field name="srvtype" type ="bigint" length = "" />
+        <field name="chtype" type ="bigint" length = "" />
+        <field name="cicsysno" type ="string" length = "" />
+        <field name="cictsno" type ="string" length = "" />
+        <field name="codec" type ="int" length = "" />
+        <field name="ipaddr" type ="int" length = "" />
+        <field name="port" type ="int" length = "" />
+        <field name="nsap" type ="string" length = "" />
+        <field name="bindingid" type ="string" length = "" />
+        <field name="hold" type ="bigint" length = "" />
+        <field name="imsi" type ="bigint" length = "" />
+        <field name="imei" type ="bigint" length = "" />
+        <field name="tmsi" type ="string" length = "" />
+        <field name="calledno" type ="int" length = "" />
+        <field name="callerno" type ="int" length = "" />
+        <field name="mcc" type ="int" length = "" />
+        <field name="mnc" type ="int" length = "" />
+        <field name="firstlac" type ="int" length = "" />
+        <field name="firstci" type ="int" length = "" />
+        <field name="lastlac" type ="int" length = "" />
+        <field name="lastci" type ="int" length = "" />
+        <field name="servicekey" type ="string" length = "" />
+        <field name="scpno" type ="string" length = "" />
+        <field name="capversion" type ="string" length = "" />
+        <field name="firsttei" type ="string" length = "" />
+        <field name="firstchannel" type ="string" length = "" />
+        <field name="sumrxlevlul" type ="string" length = "" />
+        <field name="sumrxlevldl" type ="string" length = "" />
+        <field name="sumrxqualul" type ="string" length = "" />
+        <field name="sumrxqualdl" type ="string" length = "" />
+        <field name="sumbspwr" type ="string" length = "" />
+        <field name="summspwr" type ="string" length = "" />
+        <field name="sumta" type ="string" length = "" />
+        <field name="totalmrno" type ="string" length = "" />
+        <field name="totalmrcount" type ="string" length = "" />
+        <field name="totalfullratemrno" type ="string" length = "" />
+        <field name="totalhalfratemrno" type ="string" length = "" />
+        <field name="sumrxquaul0" type ="string" length = "" />
+        <field name="sumrxquaul1" type ="string" length = "" />
+        <field name="sumrxquaul2" type ="string" length = "" />
+        <field name="sumrxquaul3" type ="string" length = "" />
+        <field name="sumrxquaul4" type ="string" length = "" />
+        <field name="sumrxquaul5" type ="string" length = "" />
+        <field name="sumrxquaul6" type ="string" length = "" />
+        <field name="sumrxquaul7" type ="string" length = "" />
+        <field name="sumrxquadl0" type ="string" length = "" />
+        <field name="sumrxquadl1" type ="string" length = "" />
+        <field name="sumrxquadl2" type ="string" length = "" />
+        <field name="sumrxquadl3" type ="string" length = "" />
+        <field name="sumrxquadl4" type ="string" length = "" />
+        <field name="sumrxquadl5" type ="string" length = "" />
+        <field name="sumrxquadl6" type ="string" length = "" />
+        <field name="sumrxquadl7" type ="string" length = "" />
+        <field name="ta01count" type ="string" length = "" />
+        <field name="rxlevel_down" type ="string" length = "" />
+        <field name="weak_coverage" type ="string" length = "" />
+        <field name="over_coverage" type ="string" length = "" />
+        <field name="imbalance" type ="string" length = "" />
+        <field name="interference" type ="string" length = "" />
+        <field name="imm_ass_comd_time" type ="string" length = "" />
+        <field name="imm_ass_rej_time" type ="string" length = "" />
+        <field name="imm_ass_comp_time" type ="string" length = "" />
+        <field name="auth_req_time" type ="string" length = "" />
+        <field name="auth_rsp_time" type ="string" length = "" />
+        <field name="identity_req_time" type ="int" length = "" />
+        <field name="identity_rsp_time" type ="int" length = "" />
+        <field name="ciph_req_time" type ="int" length = "" />
+        <field name="ciph_rsp_time" type ="int" length = "" />
+        <field name="setup_time" type ="int" length = "" />
+        <field name="call_proc_time" type ="int" length = "" />
+        <field name="assn_time" type ="int" length = "" />
+        <field name="ass_comd_time" type ="string" length = "" />
+        <field name="assn_cmpt_time" type ="int" length = "" />
+        <field name="alert_time" type ="int" length = "" />
+        <field name="answer_time" type ="int" length = "" />
+        <field name="disconn_time" type ="int" length = "" />
+        <field name="rel_time" type ="int" length = "" />
+        <field name="relcmp_time" type ="int" length = "" />
+        <field name="clr_cmd_time" type ="int" length = "" />
+        <field name="clr_cmp_time" type ="int" length = "" />
+        <field name="firpaging_time" type ="bigint" length = "" />
+        <field name="secpaging_time" type ="string" length = "" />
+        <field name="thirdpaging_time" type ="string" length = "" />
+        <field name="fourthpaging_time" type ="string" length = "" />
+        <field name="fifthpaging_time" type ="string" length = "" />
+        <field name="pagingrsp_time" type ="bigint" length = "" />
+        <field name="connection_failure_time" type ="string" length = "" />
+        <field name="clear_req_time" type ="string" length = "" />
+        <field name="end_time" type ="int" length = "" />
+        <field name="ppd" type ="int" length = "" />
+        <field name="rel_phase" type ="int" length = "" />
+        <field name="pd" type ="int" length = "" />
+        <field name="firfailmsg" type ="int" length = "" />
+        <field name="cause" type ="int" length = "" />
+        <field name="homemcc" type ="int" length = "" />
+        <field name="homemnc" type ="int" length = "" />
+        <field name="homeproid" type ="string" length = "" />
+        <field name="homeareaid" type ="string" length = "" />
+        <field name="encrypt_version" type ="string" length = "" />
+        <field name="reserved1" type ="string" length = "" />
+        <field name="reserved2" type ="string" length = "" />
+        <field name="reserved3" type ="string" length = "" />
+        <field name="reserved4" type ="int" length = "" />
+        <field name="reserved5" type ="int" length = "" />
+        <field name="reserved6" type ="string" length = "" />
+        <field name="reserved7" type ="int" length = "" />
+        <field name="reserved8" type ="bigint" length = "" />
+        <field name="filelocation" type ="string" length = "" />
+        <field name="offset_dsi" type ="int" length = "" />
+        <field name="probeid" type ="int" length = "" />
+        <field name="probeid2" type ="string" length = "" />
+        <field name="groupid" type ="string" length = "" />
+        <field name="lnkopc" type ="int" length = "" />
+        <field name="lnkdpc" type ="int" length = "" />
+        <field name="lnksrcip" type ="int" length = "" />
+        <field name="lnksrcport" type ="int" length = "" />
+        <field name="lnkdestip" type ="int" length = "" />
+        <field name="lnkdestport" type ="int" length = "" />
+        <field name="clertype" type ="int" length = "" />
+        <field name="linktype" type ="bigint" length = "" />
+        <field name="afirstxdrid" type ="string" length = "" />
+        <field name="callduration" type ="int" length = "" />
+        <field name="firfailtime" type ="int" length = "" />
+        <field name="layer1id" type ="bigint" length = "" />
+        <field name="layer2id" type ="int" length = "" />
+        <field name="layer3id" type ="string" length = "" />
+        <field name="layer4id" type ="string" length = "" />
+        <field name="layer5id" type ="string" length = "" />
+        <field name="layer6id" type ="string" length = "" />
+        <field name="csfbind" type ="bigint" length = "" />
+        <field name="fallbacktime" type ="string" length = "" />
+        <field name="tai" type ="string" length = "" />
+        <field name="ecgi" type ="string" length = "" />
+        <field name="mme_id" type ="string" length = "" />
+        <field name="csfb_ref_flag" type ="bigint" length = "" />
+        <field name="lastbscrnc" type ="int" length = "" />
+        <field name="lastaccesstype" type ="bigint" length = "" />
+        <field name="firsthotime" type ="int" length = "" />
+        <field name="lastpoolid" type ="int" length = "" />
+        <field name="e2efirfailprot" type ="int" length = "" />
+        <field name="e2efirfailpd" type ="int" length = "" />
+        <field name="e2efirfailmsg" type ="int" length = "" />
+        <field name="e2efirfailcause" type ="int" length = "" />
+        <field name="e2efirfailside" type ="bigint" length = "" />
+        <field name="connect_time" type ="int" length = "" />
+        <field name="rabrel_time" type ="string" length = "" />
+        <field name="firtchtime" type ="int" length = "" />
+        <field name="dropcause" type ="string" length = "" />
+        <field name="drd" type ="string" length = "" />
+        <field name="first_lac" type ="string" length = "" />
+        <field name="first_ci" type ="string" length = "" />
+        <field name="first_rat" type ="string" length = "" />
+        <field name="last_lac" type ="string" length = "" />
+        <field name="last_ci" type ="string" length = "" />
+        <field name="last_rat" type ="string" length = "" />
+        <field name="first_longitude" type ="string" length = "" />
+        <field name="first_latitude" type ="string" length = "" />
+        <field name="first_altitude" type ="string" length = "" />
+        <field name="first_rasterlongitude" type ="string" length = "" />
+        <field name="first_rasterlatitude" type ="string" length = "" />
+        <field name="first_rasteraltitude" type ="string" length = "" />
+        <field name="first_frequencyspot" type ="string" length = "" />
+        <field name="first_clutter" type ="string" length = "" />
+        <field name="first_userbehavior" type ="string" length = "" />
+        <field name="first_speed" type ="string" length = "" />
+        <field name="first_credibility" type ="string" length = "" />
+        <field name="last_longitude" type ="string" length = "" />
+        <field name="last_latitude" type ="string" length = "" />
+        <field name="last_altitude" type ="string" length = "" />
+        <field name="last_rasterlongitude" type ="string" length = "" />
+        <field name="last_rasterlatitude" type ="string" length = "" />
+        <field name="last_rasteraltitude" type ="string" length = "" />
+        <field name="last_frequencyspot" type ="string" length = "" />
+        <field name="last_clutter" type ="string" length = "" />
+        <field name="last_userbehavior" type ="string" length = "" />
+        <field name="last_speed" type ="string" length = "" />
+        <field name="last_credibility" type ="string" length = "" />
+        <field name="old_tmsi" type ="string" length = "" />
+        <field name="auth_sec_req_time" type ="string" length = "" />
+        <field name="classmark_req_time" type ="string" length = "" />
+        <field name="classmark_update_time" type ="string" length = "" />
+        <field name="opprelcgi" type ="string" length = "" />
+        <field name="prepaid_flag" type ="string" length = "" />
+        <field name="lastmnc" type ="int" length = "" />
+        <field name="callercc" type ="int" length = "" />
+        <field name="calleroprid" type ="int" length = "" />
+        <field name="emlpp_priority" type ="string" length = "" />
+        <field name="na" type ="string" length = "" />
+    </table>
+    <table tablename = "CDR_BICC"  path = "hdfs:///local-filestream/CDR_BICC" schema="cdr"  numPartitions="2" coalesce="2" fileBufferSizeInMB="2000">
+        <field name="cdrid"  type ="string"  />
+        <field name="refid"  type ="bigint"  />
+        <field name="starttime"  type ="int"  />
+        <field name="millisec"  type ="int"  />
+        <field name="srvstat"  type ="bigint"  />
+        <field name="cdrstat"  type ="bigint"  />
+        <field name="ni"  type ="int"  />
+        <field name="opc"  type ="int"  />
+        <field name="dpc"  type ="int"  />
+        <field name="linksetid"  type ="bigint"  />
+        <field name="cic"  type ="int"  />
+        <field name="mgw1bearerip"  type ="int"  />
+        <field name="mgw1bearerport"  type ="int"  />
+        <field name="mgw2bearerip"  type ="int"  />
+        <field name="mgw2bearerport"  type ="int"  />
+        <field name="srvtype"  type ="bigint"  />
+        <field name="calledno"  type ="bigint"  />
+        <field name="cplnoa"  type ="int"  />
+        <field name="calledimsi"  type ="bigint"  />
+        <field name="destcc"  type ="int"  />
+        <field name="destareaid"  type ="string"  />
+        <field name="destnumtype"  type ="string"  />
+        <field name="destoprid"  type ="int"  />
+        <field name="calledusrno"  type ="int"  />
+        <field name="callerno"  type ="bigint"  />
+        <field name="cldnoa"  type ="int"  />
+        <field name="callerimsi"  type ="bigint"  />
+        <field name="callercc"  type ="string"  />
+        <field name="callerareaid"  type ="string"  />
+        <field name="callernumtype"  type ="string"  />
+        <field name="calleroprid"  type ="string"  />
+        <field name="oldno"  type ="string"  />
+        <field name="oldnooprid"  type ="string"  />
+        <field name="fwdno"  type ="string"  />
+        <field name="fwdnooprid"  type ="string"  />
+        <field name="category"  type ="int"  />
+        <field name="tmr"  type ="bigint"  />
+        <field name="fwdtype"  type ="bigint"  />
+        <field name="fwdtimes"  type ="int"  />
+        <field name="iam_time"  type ="bigint"  />
+        <field name="sao_time"  type ="string"  />
+        <field name="apm_time"  type ="int"  />
+        <field name="acm_time"  type ="int"  />
+        <field name="anm_time"  type ="string"  />
+        <field name="dualseizeflag"  type ="bigint"  />
+        <field name="vp_v_flag"  type ="string"  />
+        <field name="codecnegoflag"  type ="bigint"  />
+        <field name="codecbnego"  type ="bigint"  />
+        <field name="codecanego"  type ="bigint"  />
+        <field name="codecmodflag"  type ="string"  />
+        <field name="codecbmod"  type ="string"  />
+        <field name="codecamod"  type ="string"  />
+        <field name="rel_time"  type ="int"  />
+        <field name="rlc_time"  type ="int"  />
+        <field name="chgind"  type ="int"  />
+        <field name="end_time"  type ="int"  />
+        <field name="rel_phase"  type ="int"  />
+        <field name="firfailmsg"  type ="int"  />
+        <field name="cause"  type ="int"  />
+        <field name="encrypt_version"  type ="string"  />
+        <field name="reserved1"  type ="int"  />
+        <field name="reserved2"  type ="string"  />
+        <field name="reserved3"  type ="string"  />
+        <field name="reserved4"  type ="bigint"  />
+        <field name="reserved5"  type ="int"  />
+        <field name="reserved6"  type ="bigint"  />
+        <field name="reserved7"  type ="int"  />
+        <field name="reserved8"  type ="bigint"  />
+        <field name="filelocation"  type ="string"  />
+        <field name="offset_dsi"  type ="int"  />
+        <field name="formatcallerno"  type ="int"  />
+        <field name="probeid"  type ="int"  />
+        <field name="agroupid"  type ="int"  />
+        <field name="sig_collection_type"  type ="int"  />
+        <field name="lnkopc"  type ="int"  />
+        <field name="lnkdpc"  type ="int"  />
+        <field name="lnksrcip"  type ="int"  />
+        <field name="lnksrcport"  type ="int"  />
+        <field name="lnkdestip"  type ="int"  />
+        <field name="lnkdestport"  type ="int"  />
+        <field name="locnum"  type ="string"  />
+        <field name="con_time"  type ="string"  />
+        <field name="vasservicetype"  type ="bigint"  />
+        <field name="correlationid"  type ="string"  />
+        <field name="scfid"  type ="string"  />
+        <field name="callduration"  type ="bigint"  />
+        <field name="firfailtime"  type ="int"  />
+        <field name="itc"  type ="bigint"  />
+        <field name="itr"  type ="int"  />
+        <field name="reldirection"  type ="bigint"  />
+        <field name="layer1id"  type ="string"  />
+        <field name="layer2id"  type ="string"  />
+        <field name="layer3id"  type ="string"  />
+        <field name="layer4id"  type ="string"  />
+        <field name="layer5id"  type ="string"  />
+        <field name="layer6id"  type ="string"  />
+        <field name="acm_playback"  type ="string"  />
+        <field name="acm_cause"  type ="string"  />
+        <field name="caller_prepaid_flag"  type ="string"  />
+        <field name="callee_prepaid_flag"  type ="string"  />
+        <field name="calling_user_category"  type ="string"  />
+        <field name="called_user_category"  type ="string"  />
+        <field name="callerno_restricted_ind"  type ="bigint"  />
+        <field name="rel_location"  type ="int"  />
+        <field name="na"  type ="string"  />
+    </table>
+    <table tablename = "CDR_ISUP"  path = "hdfs:///local-filestream/CDR_ISUP" schema="cdr"  numPartitions="1" coalesce="1" fileBufferSizeInMB="1000">
+        <field name="cdrid"  type = "string"  />
+        <field name="refid"  type = "bigint"  />
+        <field name="starttime"  type = "int"  />
+        <field name="millisec"  type = "int"  />
+        <field name="srvstat"  type = "bigint"  />
+        <field name="cdrstat"  type = "bigint"  />
+        <field name="ni"  type = "int"  />
+        <field name="opc"  type = "int"  />
+        <field name="dpc"  type = "int"  />
+        <field name="linksetid"  type = "bigint"  />
+        <field name="sig_collection_type"  type = "int"  />
+        <field name="lnkopc"  type = "int"  />
+        <field name="lnkdpc"  type = "int"  />
+        <field name="lnksrcip"  type = "int"  />
+        <field name="lnksrcport"  type = "int"  />
+        <field name="lnkdestip"  type = "int"  />
+        <field name="lnkdestport"  type = "int"  />
+        <field name="locnum"  type = "string"  />
+        <field name="cic"  type = "int"  />
+        <field name="srvtype"  type = "bigint"  />
+        <field name="calledno"  type = "int"  />
+        <field name="cplnoa"  type = "int"  />
+        <field name="calledimsi"  type = "bigint"  />
+        <field name="destcc"  type = "int"  />
+        <field name="destareaid"  type = "string"  />
+        <field name="destnumtype"  type = "string"  />
+        <field name="destoprid"  type = "int"  />
+        <field name="calledusrno"  type = "int"  />
+        <field name="callerno"  type = "int"  />
+        <field name="cldnoa"  type = "int"  />
+        <field name="callerimsi"  type = "string"  />
+        <field name="callercc"  type = "int"  />
+        <field name="callerareaid"  type = "string"  />
+        <field name="callernumtype"  type = "string"  />
+        <field name="calleroprid"  type = "int"  />
+        <field name="formatcallerno"  type = "int"  />
+        <field name="callerroamingdir"  type = "string"  />
+        <field name="calleeroamingdir"  type = "string"  />
+        <field name="callerhomemcc"  type = "string"  />
+        <field name="callerhomemnc"  type = "string"  />
+        <field name="calleehomemcc"  type = "string"  />
+        <field name="calleehomemnc"  type = "string"  />
+        <field name="callervisitcc"  type = "string"  />
+        <field name="callervisitndc"  type = "string"  />
+        <field name="calleevisitcc"  type = "string"  />
+        <field name="calleevisitndc"  type = "string"  />
+        <field name="oldno"  type = "string"  />
+        <field name="oldnooprid"  type = "string"  />
+        <field name="fwdno"  type = "string"  />
+        <field name="fwdnooprid"  type = "string"  />
+        <field name="fwdtype"  type = "string"  />
+        <field name="fwdtimes"  type = "string"  />
+        <field name="category"  type = "int"  />
+        <field name="tmr"  type = "bigint"  />
+        <field name="dualseizeflag"  type = "bigint"  />
+        <field name="chgind"  type = "int"  />
+        <field name="iam_time"  type = "bigint"  />
+        <field name="sao_time"  type = "string"  />
+        <field name="sam_appeartimes"  type = "bigint"  />
+        <field name="inr_time"  type = "string"  />
+        <field name="inf_time"  type = "string"  />
+        <field name="cot_result"  type = "bigint"  />
+        <field name="acm_time"  type = "int"  />
+        <field name="cpg_time"  type = "int"  />
+        <field name="cpg_appeartimes"  type = "bigint"  />
+        <field name="con_time"  type = "string"  />
+        <field name="anm_time"  type = "string"  />
+        <field name="rel_time"  type = "int"  />
+        <field name="rlc_time"  type = "int"  />
+        <field name="rsc_time"  type = "string"  />
+        <field name="end_time"  type = "int"  />
+        <field name="acm_cause"  type = "string"  />
+        <field name="rel_phase"  type = "int"  />
+        <field name="firfailmsg"  type = "int"  />
+        <field name="cause"  type = "int"  />
+        <field name="causeclass"  type = "bigint"  />
+        <field name="reldirection"  type = "bigint"  />
+        <field name="encrypt_version"  type = "string"  />
+        <field name="reserved1"  type = "string"  />
+        <field name="reserved2"  type = "string"  />
+        <field name="reserved3"  type = "string"  />
+        <field name="reserved4"  type = "string"  />
+        <field name="reserved5"  type = "int"  />
+        <field name="reserved6"  type = "string"  />
+        <field name="reserved7"  type = "int"  />
+        <field name="reserved8"  type = "string"  />
+        <field name="filelocation"  type = "string"  />
+        <field name="offset_dsi"  type = "int"  />
+        <field name="probeid"  type = "int"  />
+        <field name="agroupid"  type = "int"  />
+        <field name="vasservicetype"  type = "bigint"  />
+        <field name="correlationid"  type = "string"  />
+        <field name="scfid"  type = "string"  />
+        <field name="callduration"  type = "bigint"  />
+        <field name="firfailtime"  type = "int"  />
+        <field name="itc"  type = "bigint"  />
+        <field name="itr"  type = "int"  />
+        <field name="caller_prepaid_flag"  type = "string"  />
+        <field name="callee_prepaid_flag"  type = "string"  />
+        <field name="layer1id"  type = "string"  />
+        <field name="layer2id"  type = "string"  />
+        <field name="layer3id"  type = "string"  />
+        <field name="layer4id"  type = "string"  />
+        <field name="layer5id"  type = "string"  />
+        <field name="layer6id"  type = "string"  />
+        <field name="acm_playback"  type = "string"  />
+        <field name="sig_collection_type_new"  type = "int"  />
+        <field name="rsp_lnk1_type"  type = "string"  />
+        <field name="rsp_lnk1_sig_type"  type = "string"  />
+        <field name="rsp_lnk1_opc"  type = "string"  />
+        <field name="rsp_lnk1_dpc"  type = "string"  />
+        <field name="rsp_lnk1_slc"  type = "string"  />
+        <field name="rsp_lnk1_srcip"  type = "string"  />
+        <field name="rsp_lnk1_srcport"  type = "string"  />
+        <field name="rsp_lnk1_destip"  type = "string"  />
+        <field name="rsp_lnk1_destport"  type = "string"  />
+        <field name="rsp_lnk2_type"  type = "string"  />
+        <field name="rsp_lnk2_sig_type"  type = "string"  />
+        <field name="rsp_lnk2_opc"  type = "string"  />
+        <field name="rsp_lnk2_dpc"  type = "string"  />
+        <field name="rsp_lnk2_slc"  type = "string"  />
+        <field name="rsp_lnk2_srcip"  type = "string"  />
+        <field name="rsp_lnk2_srcport"  type = "string"  />
+        <field name="rsp_lnk2_destip"  type = "string"  />
+        <field name="rsp_lnk2_destport"  type = "string"  />
+        <field name="rsp_lnk3_type"  type = "string"  />
+        <field name="rsp_lnk3_sig_type"  type = "string"  />
+        <field name="rsp_lnk3_opc"  type = "string"  />
+        <field name="rsp_lnk3_dpc"  type = "string"  />
+        <field name="rsp_lnk3_slc"  type = "string"  />
+        <field name="rsp_lnk3_srcip"  type = "string"  />
+        <field name="rsp_lnk3_srcport"  type = "string"  />
+        <field name="rsp_lnk3_destip"  type = "string"  />
+        <field name="rsp_lnk3_destport"  type = "string"  />
+        <field name="rsp_lnk4_type"  type = "string"  />
+        <field name="rsp_lnk4_sig_type"  type = "string"  />
+        <field name="rsp_lnk4_opc"  type = "string"  />
+        <field name="rsp_lnk4_dpc"  type = "string"  />
+        <field name="rsp_lnk4_slc"  type = "string"  />
+        <field name="rsp_lnk4_srcip"  type = "string"  />
+        <field name="rsp_lnk4_srcport"  type = "string"  />
+        <field name="rsp_lnk4_destip"  type = "string"  />
+        <field name="rsp_lnk4_destport"  type = "string"  />
+        <field name="calling_user_category"  type = "string"  />
+        <field name="called_user_category"  type = "string"  />
+        <field name="callerno_restricted_ind"  type = "bigint"  />
+        <field name="destndc"  type = "int"  />
+        <field name="rel_location"  type = "int"  />
+        <field name="source_ne_id"  type = "int"  />
+        <field name="dest_ne_id"  type = "int"  />
+        <field name="source_ne_type"  type = "int"  />
+        <field name="dest_ne_type"  type = "int"  />
+        <field name="na"  type = "string"  />
+    </table>
+    <table tablename = "CDR_SIP"  path = "hdfs:///local-filestream/CDR_SIP" schema="cdr"  numPartitions="1" coalesce="1" fileBufferSizeInMB="1000">
+        <field name="cdrid"  type = "string"  />
+        <field name="refid"  type = "bigint"  />
+        <field name="starttime"  type = "int"  />
+        <field name="millisec"  type = "int"  />
+        <field name="srvstat"  type = "bigint"  />
+        <field name="cdrstat"  type = "bigint"  />
+        <field name="linktype"  type = "bigint"  />
+        <field name="sig_collection_type"  type = "string"  />
+        <field name="lnksrcip"  type = "int"  />
+        <field name="lnksrcport"  type = "int"  />
+        <field name="lnkdestip"  type = "int"  />
+        <field name="lnkdestport"  type = "int"  />
+        <field name="locnum"  type = "string"  />
+        <field name="srvtype"  type = "bigint"  />
+        <field name="calledno"  type = "bigint"  />
+        <field name="cplnoa"  type = "int"  />
+        <field name="calledimsi"  type = "bigint"  />
+        <field name="destcc"  type = "int"  />
+        <field name="destareaid"  type = "string"  />
+        <field name="destnumtype"  type = "int"  />
+        <field name="destoprid"  type = "int"  />
+        <field name="calledusrno"  type = "int"  />
+        <field name="callerno"  type = "bigint"  />
+        <field name="cldnoa"  type = "int"  />
+        <field name="callerimsi"  type = "string"  />
+        <field name="callercc"  type = "string"  />
+        <field name="callerareaid"  type = "string"  />
+        <field name="callernumtype"  type = "int"  />
+        <field name="calleroprid"  type = "string"  />
+        <field name="formatcallerno"  type = "bigint"  />
+        <field name="callerroamingdir"  type = "string"  />
+        <field name="calleeroamingdir"  type = "string"  />
+        <field name="callerhomemcc"  type = "string"  />
+        <field name="callerhomemnc"  type = "string"  />
+        <field name="calleehomemcc"  type = "string"  />
+        <field name="calleehomemnc"  type = "string"  />
+        <field name="callervisitcc"  type = "string"  />
+        <field name="callervisitndc"  type = "string"  />
+        <field name="calleevisitcc"  type = "string"  />
+        <field name="calleevisitndc"  type = "string"  />
+        <field name="oldno"  type = "string"  />
+        <field name="oldnooprid"  type = "string"  />
+        <field name="fwdno"  type = "string"  />
+        <field name="fwdnooprid"  type = "string"  />
+        <field name="fwdtype"  type = "string"  />
+        <field name="fwdtimes"  type = "string"  />
+        <field name="tmr"  type = "string"  />
+        <field name="chgind"  type = "string"  />
+        <field name="invite_time"  type = "bigint"  />
+        <field name="ringing_time"  type = "int"  />
+        <field name="cancel_time"  type = "string"  />
+        <field name="intvite_200_time"  type = "string"  />
+        <field name="ack_time"  type = "int"  />
+        <field name="bye_time"  type = "string"  />
+        <field name="bye_200_time"  type = "string"  />
+        <field name="end_time"  type = "int"  />
+        <field name="rel_phase"  type = "int"  />
+        <field name="cause"  type = "int"  />
+        <field name="reldirection"  type = "bigint"  />
+        <field name="encrypt_version"  type = "string"  />
+        <field name="reserved1"  type = "string"  />
+        <field name="reserved2"  type = "string"  />
+        <field name="reserved3"  type = "string"  />
+        <field name="reserved4"  type = "string"  />
+        <field name="reserved5"  type = "int"  />
+        <field name="reserved6"  type = "string"  />
+        <field name="reserved7"  type = "string"  />
+        <field name="reserved8"  type = "string"  />
+        <field name="filelocation"  type = "string"  />
+        <field name="offset_dsi"  type = "int"  />
+        <field name="probeid"  type = "int"  />
+        <field name="agroupid"  type = "int"  />
+        <field name="vasservicetype"  type = "string"  />
+        <field name="correlationid"  type = "string"  />
+        <field name="scfid"  type = "string"  />
+        <field name="if_type"  type = "string"  />
+        <field name="callid"  type = "string"  />
+        <field name="reasonprotocol"  type = "bigint"  />
+        <field name="reasoncause"  type = "int"  />
+        <field name="causeclass"  type = "bigint"  />
+        <field name="linkprotocol"  type = "int"  />
+        <field name="msc_neid"  type = "string"  />
+        <field name="peer_neid"  type = "string"  />
+        <field name="firfailtime"  type = "int"  />
+        <field name="callduration"  type = "bigint"  />
+        <field name="itc"  type = "string"  />
+        <field name="itr"  type = "string"  />
+        <field name="ni"  type = "string"  />
+        <field name="opc"  type = "string"  />
+        <field name="dpc"  type = "string"  />
+        <field name="invite_response_time"  type = "int"  />
+        <field name="vpfailback"  type = "string"  />
+        <field name="con_flag"  type = "string"  />
+        <field name="layer1id"  type = "string"  />
+        <field name="layer2id"  type = "string"  />
+        <field name="layer3id"  type = "string"  />
+        <field name="layer4id"  type = "string"  />
+        <field name="layer5id"  type = "string"  />
+        <field name="layer6id"  type = "string"  />
+        <field name="session_progress_time"  type = "int"  />
+        <field name="sig_collection_type_new"  type = "string"  />
+        <field name="caller_prepaid_flag"  type = "string"  />
+        <field name="callee_prepaid_flag"  type = "string"  />
+        <field name="na"  type = "string"  />
+    </table>
+</data>
