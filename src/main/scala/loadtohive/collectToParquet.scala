@@ -1,17 +1,17 @@
 package loadtohive
 
-import java.io.File
-
-import scala.xml.Node
-import java.util.Calendar
 import java.text.SimpleDateFormat
+import java.util.Calendar
+
+import hdfsUtils.StringifyLog
+import org.apache.hadoop.fs.{FileSystem, Path}
+import org.apache.spark.sql.functions._
+import org.apache.spark.sql.types.{StringType, StructField, StructType}
+import org.apache.spark.sql.{Row, SQLContext, SaveMode}
+import org.apache.spark.{SparkConf, SparkContext}
 
 import scala.collection.mutable.{ArrayBuffer, ListBuffer}
-import org.apache.hadoop.fs.{FileSystem, Path}
-import org.apache.spark.{SparkConf, SparkContext}
-import org.apache.spark.sql.functions._
-import org.apache.spark.sql.{Row, SQLContext, SaveMode}
-import org.apache.spark.sql.types.{StringType, StructField, StructType}
+import scala.xml.Node
 
 
 object StructureGenerator {
@@ -87,12 +87,13 @@ object collectToParquet {
 
   def main(args: Array[String]): Unit = {
     //Init spark context
-    val conf = new SparkConf().setAppName(args(1).toString)
+    val appName = args(1).toString
+    val conf = new SparkConf().setAppName(appName)
     val sc = new SparkContext(conf)
     val sqlc = new org.apache.spark.sql.hive.HiveContext(sc)
-    import sqlc.implicits._
     sqlc.setConf("spark.sql.parquet.compression.codec.", "snappy")
     val fs = FileSystem.get(sc.hadoopConfiguration)
+    val log = new StringifyLog(appName, fs)
 
     val tempPatch = "/tmp/" + args(0).toString.split("/").last
     fs.copyToLocalFile(false, new Path(args(0).toString), new Path(tempPatch), true)
@@ -126,15 +127,21 @@ object collectToParquet {
     val deleteBuffer = scala.collection.mutable.ListBuffer.empty[String]
 
     val serialTime = measure {
-      statesTable.par.foreach(item => {    //par
-        val strItem = item.toString
-        val schema = StructureGenerator.createStructType(statesName(strItem), statesType(strItem))
-        val typeSchema = statesMain(strItem)
-        val hivePartition = createPartitionDir(strItem, fs, dbSchema(strItem), numPartitions(strItem))
-        val hdfsDirs = hadoopListFolders(statesFilePatch(item).toString, fs, fileBufferSizeInMB(strItem))
-        worker(sc, sqlc, schema, typeSchema, hdfsDirs, hivePartition, numPartitions(strItem), fileCoalesce(strItem))
-        sqlc.sql("MSCK REPAIR TABLE " + dbSchema(strItem) + "." + strItem)
-        hdfsDirs.map(deleteBuffer += _)
+      statesTable.par.foreach(item => {
+        try {
+          val strItem = item.toString
+          val schema = StructureGenerator.createStructType(statesName(strItem), statesType(strItem))
+          val typeSchema = statesMain(strItem)
+          val hivePartition = createPartitionDir(strItem, fs, dbSchema(strItem), numPartitions(strItem))
+          val hdfsDirs = hadoopListFolders(statesFilePatch(item).toString, fs, fileBufferSizeInMB(strItem))
+          worker(sc, sqlc, schema, typeSchema, hdfsDirs, hivePartition, numPartitions(strItem), fileCoalesce(strItem))
+          sqlc.sql("MSCK REPAIR TABLE " + dbSchema(strItem) + "." + strItem)
+          hdfsDirs.map(deleteBuffer += _)
+        }
+        catch {
+            case e: Exception =>
+              log.error(e)
+        }
       })
     }
     deleteFile(deleteBuffer, fs)

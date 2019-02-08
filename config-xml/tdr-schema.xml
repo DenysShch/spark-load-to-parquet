@@ -1058,7 +1058,7 @@
         <field name="prepaid_flag"  type = "string"  />
         <field name="na"  type = "string"  />
       </table>
-      <table tablename = "TDR_MAP_GMM"  path = "hdfs:///local-filestream/TDR_MAP_GMM" schema="tdr" numPartitions="30" coalesce="30" fileBufferSizeInMB="30000">
+      <table tablename = "TDR_MAP_GMM"  path = "hdfs:///local-filestream/TDR_MAP_GMM" schema="tdr" numPartitions="3" coalesce="3" fileBufferSizeInMB="3000">
         <field name="tdrid"  type = "string"  />
         <field name="refid"  type = "string"  />
         <field name="starttime"  type = "int"  />
@@ -1498,6 +1498,47 @@
         <field name="layer5id"  type = "string"  />
         <field name="layer6id"  type = "string"  />
         <field name="prepaid_flag"  type = "string"  />
+        <field name="na"  type = "string"  />
+    </table>
+    <table tablename = "TDR_INAP"  path = "hdfs:///local-filestream/TDR_INAP" schema="tdr" numPartitions="1" coalesce="1" fileBufferSizeInMB="1000">
+        <field name="starttime"  type = "int"  />
+        <field name="millisec"  type = "int"  />
+        <field name="srvstat"  type = "string"  />
+        <field name="ni"  type = "int"  />
+        <field name="opc"  type = "string"  />
+        <field name="ogt"  type = "string"  />
+        <field name="dpc"  type = "string"  />
+        <field name="dgt"  type = "string"  />
+        <field name="calling_partys_category"  type = "int"  />
+        <field name="callerno"  type = "int"  />
+        <field name="calledno"  type = "string"  />
+        <field name="calledusrno"  type = "int"  />
+        <field name="callerimsi"  type = "string"  />
+        <field name="calledimsi"  type = "string"  />
+        <field name="calledchange"  type = "string"  />
+        <field name="erbtype"  type = "string"  />
+        <field name="call_duration"  type = "string"  />
+        <field name="end_time"  type = "int"  />
+        <field name="firfailtime"  type = "string"  />
+        <field name="pd"  type = "string"  />
+        <field name="reltype"  type = "string"  />
+        <field name="cause"  type = "string"  />
+        <field name="roam_direction"  type = "string"  />
+        <field name="homemcc"  type = "string"  />
+        <field name="homemnc"  type = "string"  />
+        <field name="visitcc"  type = "string"  />
+        <field name="visitndc"  type = "string"  />
+        <field name="lnksrcip"  type = "int"  />
+        <field name="lnksrcport"  type = "int"  />
+        <field name="lnkdestip"  type = "int"  />
+        <field name="lnkdestport"  type = "int"  />
+        <field name="callernotype"  type = "int"  />
+        <field name="callednotype"  type = "int"  />
+        <field name="otid"  type = "int"  />
+        <field name="dtid"  type = "int"  />
+        <field name="callresult"  type = "int"  />
+        <field name="bcsm_rel_cause"  type = "string"  />
+        <field name="charging_type"  type = "string"  />
         <field name="na"  type = "string"  />
     </table>
 </data>
