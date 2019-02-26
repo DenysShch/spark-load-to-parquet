@@ -6,11 +6,11 @@
         <field name="end_time_msel"  type = "int"  />
         <field name="prot_category"  type = "int"  />
         <field name="prot_type"  type = "int"  />
-        <field name="l7_carrier_prot"  type = "bigint"  />
-        <field name="msisdn"  type = "int"  />
-        <field name="imsi"  type = "bigint"  />
-        <field name="imei"  type = "bigint"  />
-        <field name="roam_direction"  type = "string"  />
+        <field name="l7_carrier_prot"  type = "int"  />
+        <field name="msisdn"  type = "string"  />
+        <field name="imsi"  type = "string"  />
+        <field name="imei"  type = "string"  />
+        <field name="roam_direction"  type = "int"  />
         <field name="ms_ip"  type = "string"  />
         <field name="server_ip"  type = "string"  />
         <field name="ms_port"  type = "int"  />
@@ -18,97 +18,97 @@
         <field name="apn"  type = "string"  />
         <field name="sgsn_user_ip"  type = "string"  />
         <field name="ggsn_user_ip"  type = "string"  />
-        <field name="mcc"  type = "int"  />
-        <field name="mnc"  type = "int"  />
-        <field name="rat"  type = "bigint"  />
-        <field name="lac"  type = "int"  />
+        <field name="mcc"  type = "string"  />
+        <field name="mnc"  type = "string"  />
+        <field name="rat"  type = "int"  />
+        <field name="lac"  type = "string"  />
         <field name="rac"  type = "string"  />
         <field name="sac"  type = "string"  />
         <field name="ci"  type = "string"  />
-        <field name="l4_type"  type = "bigint"  />
-        <field name="l4_ul_throughput"  type = "int"  />
-        <field name="l4_dw_throughput"  type = "int"  />
-        <field name="l4_ul_goodput"  type = "int"  />
-        <field name="l4_dw_goodput"  type = "int"  />
-        <field name="l4_ul_packets"  type = "int"  />
-        <field name="l4_dw_packets"  type = "int"  />
-        <field name="tcp_conn_states"  type = "bigint"  />
+        <field name="l4_type"  type = "int"  />
+        <field name="l4_ul_throughput"  type = "string"  />
+        <field name="l4_dw_throughput"  type = "string"  />
+        <field name="l4_ul_goodput"  type = "string"  />
+        <field name="l4_dw_goodput"  type = "string"  />
+        <field name="l4_ul_packets"  type = "string"  />
+        <field name="l4_dw_packets"  type = "string"  />
+        <field name="tcp_conn_states"  type = "int"  />
         <field name="tac"  type = "string"  />
         <field name="eci"  type = "string"  />
-        <field name="tcp_rtt_step1"  type = "int"  />
-        <field name="tcp_ul_retrans_withpl"  type = "bigint"  />
-        <field name="tcp_dw_retrans_withpl"  type = "bigint"  />
-        <field name="tcp_ul_packages_withpl"  type = "int"  />
-        <field name="tcp_dw_packages_withpl"  type = "int"  />
+        <field name="tcp_rtt_step1"  type = "string"  />
+        <field name="tcp_ul_retrans_withpl"  type = "string"  />
+        <field name="tcp_dw_retrans_withpl"  type = "string"  />
+        <field name="tcp_ul_packages_withpl"  type = "string"  />
+        <field name="tcp_dw_packages_withpl"  type = "string"  />
         <field name="ran_ne_user_ip"  type = "string"  />
-        <field name="tcp_rtt"  type = "int"  />
-        <field name="tcp_ul_outofsequ"  type = "bigint"  />
-        <field name="tcp_dw_outofsequ"  type = "bigint"  />
-        <field name="tcp_win_size"  type = "bigint"  />
-        <field name="interfaceid"  type = "bigint"  />
-        <field name="homemcc"  type = "int"  />
-        <field name="homemnc"  type = "int"  />
+        <field name="tcp_rtt"  type = "string"  />
+        <field name="tcp_ul_outofsequ"  type = "string"  />
+        <field name="tcp_dw_outofsequ"  type = "string"  />
+        <field name="tcp_win_size"  type = "string"  />
+        <field name="interfaceid"  type = "int"  />
+        <field name="homemcc"  type = "string"  />
+        <field name="homemnc"  type = "string"  />
         <field name="host"  type = "string"  />
         <field name="user_agent"  type = "string"  />
         <field name="fst_uri"  type = "string"  />
         <field name="ms_win_stat_total_num"  type = "int"  />
-        <field name="ms_win_stat_small_num"  type = "bigint"  />
+        <field name="ms_win_stat_small_num"  type = "int"  />
         <field name="ms_ack_to_1stget_delay"  type = "int"  />
-        <field name="server_ack_to_1stdata_delay"  type = "bigint"  />
-        <field name="avg_ul_rtt"  type = "int"  />
-        <field name="avg_dw_rtt"  type = "int"  />
-        <field name="ul_rtt_long_num"  type = "bigint"  />
-        <field name="dw_rtt_long_num"  type = "bigint"  />
+        <field name="server_ack_to_1stdata_delay"  type = "int"  />
+        <field name="avg_ul_rtt"  type = "string"  />
+        <field name="avg_dw_rtt"  type = "string"  />
+        <field name="ul_rtt_long_num"  type = "int"  />
+        <field name="dw_rtt_long_num"  type = "int"  />
         <field name="ul_rtt_stat_num"  type = "int"  />
         <field name="dw_rtt_stat_num"  type = "int"  />
-        <field name="user_probe_ul_lost_pkt"  type = "bigint"  />
-        <field name="server_probe_ul_lost_pkt"  type = "bigint"  />
-        <field name="server_probe_dw_lost_pkt"  type = "bigint"  />
-        <field name="user_probe_dw_lost_pkt"  type = "bigint"  />
+        <field name="user_probe_ul_lost_pkt"  type = "int"  />
+        <field name="server_probe_ul_lost_pkt"  type = "int"  />
+        <field name="server_probe_dw_lost_pkt"  type = "int"  />
+        <field name="user_probe_dw_lost_pkt"  type = "int"  />
         <field name="charging_characteristics"  type = "string"  />
-        <field name="l7_ul_goodput_full_mss"  type = "bigint"  />
-        <field name="datatrans_ul_duration"  type = "bigint"  />
-        <field name="l7_dw_goodput_full_mss"  type = "bigint"  />
-        <field name="datatrans_dw_duration"  type = "bigint"  />
-        <field name="ul_smallpacket_num"  type = "bigint"  />
-        <field name="dw_smallpacket_num"  type = "bigint"  />
-        <field name="dl_serious_out_of_order_num"  type = "bigint"  />
-        <field name="dl_slight_out_of_order_num"  type = "bigint"  />
-        <field name="dl_flight_total_size"  type = "int"  />
-        <field name="dl_flight_total_num"  type = "int"  />
-        <field name="dl_max_flight_size"  type = "int"  />
-        <field name="ul_serious_out_of_order_num"  type = "bigint"  />
-        <field name="ul_slight_out_of_order_num"  type = "bigint"  />
-        <field name="ul_flight_total_size"  type = "int"  />
-        <field name="ul_flight_total_num"  type = "int"  />
-        <field name="ul_max_flight_size"  type = "int"  />
-        <field name="user_dl_slight_out_of_order_packets"  type = "bigint"  />
-        <field name="server_ul_slight_out_of_order_packets"  type = "bigint"  />
-        <field name="dl_continuous_retransmission_delay"  type = "bigint"  />
+        <field name="l7_ul_goodput_full_mss"  type = "string"  />
+        <field name="datatrans_ul_duration"  type = "string"  />
+        <field name="l7_dw_goodput_full_mss"  type = "string"  />
+        <field name="datatrans_dw_duration"  type = "string"  />
+        <field name="ul_smallpacket_num"  type = "string"  />
+        <field name="dw_smallpacket_num"  type = "string"  />
+        <field name="dl_serious_out_of_order_num"  type = "string"  />
+        <field name="dl_slight_out_of_order_num"  type = "string"  />
+        <field name="dl_flight_total_size"  type = "string"  />
+        <field name="dl_flight_total_num"  type = "string"  />
+        <field name="dl_max_flight_size"  type = "string"  />
+        <field name="ul_serious_out_of_order_num"  type = "string"  />
+        <field name="ul_slight_out_of_order_num"  type = "string"  />
+        <field name="ul_flight_total_size"  type = "string"  />
+        <field name="ul_flight_total_num"  type = "string"  />
+        <field name="ul_max_flight_size"  type = "string"  />
+        <field name="user_dl_slight_out_of_order_packets"  type = "string"  />
+        <field name="server_ul_slight_out_of_order_packets"  type = "string"  />
+        <field name="dl_continuous_retransmission_delay"  type = "string"  />
         <field name="user_hungry_delay"  type = "string"  />
         <field name="server_hungry_delay"  type = "string"  />
-        <field name="sv"  type = "int"  />
+        <field name="sv"  type = "string"  />
         <field name="sub_prot_type"  type = "int"  />
-        <field name="fst_pkt_response_delay"  type = "int"  />
+        <field name="fst_pkt_response_delay"  type = "string"  />
         <field name="app_id"  type = "int"  />
-        <field name="dns2syn"  type = "string"  />
-        <field name="download_type"  type = "bigint"  />
+        <field name="dns2syn"  type = "int"  />
+        <field name="download_type"  type = "int"  />
         <field name="fail_class"  type = "string"  />
         <field name="file_size_catgory"  type = "int"  />
         <field name="avg_ul_rtt_micro_sec"  type = "int"  />
         <field name="avg_dw_rtt_micro_sec"  type = "int"  />
-        <field name="clienthello_counts"  type = "bigint"  />
-        <field name="finish_counts"  type = "bigint"  />
-        <field name="totaldelays_of_shakehands"  type = "bigint"  />
+        <field name="clienthello_counts"  type = "int"  />
+        <field name="finish_counts"  type = "int"  />
+        <field name="totaldelays_of_shakehands"  type = "int"  />
         <field name="bytesof_2drection_durhandshake"  type = "int"  />
         <field name="https_failcode"  type = "int"  />
-        <field name="s1u_sgw_teid"  type = "string"  />
-        <field name="s1u_enodeb_teid"  type = "string"  />
-        <field name="arp"  type = "string"  />
-        <field name="xdr_type"  type = "string"  />
-        <field name="traffic_class_neg"  type = "string"  />
-        <field name="thp_neg"  type = "string"  />
-        <field name="qci_neg"  type = "string"  />
+        <field name="s1u_sgw_teid"  type = "int"  />
+        <field name="s1u_enodeb_teid"  type = "int"  />
+        <field name="arp"  type = "int"  />
+        <field name="xdr_type"  type = "int"  />
+        <field name="traffic_class_neg"  type = "int"  />
+        <field name="thp_neg"  type = "int"  />
+        <field name="qci_neg"  type = "int"  />
         <field name="avg_ul_interval"  type = "string"  />
         <field name="avg_dl_interval"  type = "string"  />
         <field name="avg_ul_jitter"  type = "string"  />
@@ -129,8 +129,8 @@
         <field name="dl_datatrans_segnum"  type = "string"  />
         <field name="avg_ul_trans_delay"  type = "string"  />
         <field name="avg_dl_trans_delay"  type = "string"  />
-        <field name="total_tcp_rtt"  type = "int"  />
-        <field name="total_tcp_rtt_step1"  type = "int"  />
+        <field name="total_tcp_rtt"  type = "string"  />
+        <field name="total_tcp_rtt_step1"  type = "string"  />
         <field name="na"  type = "string"  />
     </table>
 </data>

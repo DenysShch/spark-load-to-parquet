@@ -8119,7 +8119,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#template-resolver;0.1!template-resolver.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.6!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 2303ms :: artifacts dl 181ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 3955ms :: artifacts dl 319ms[0m
 [0m[[0mdebug[0m] [0m	report for default#loadtohive-build;0.1-SNAPSHOT compile produced in E:\3_Work\12_spark_from_local_to_parq\loadtohive\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-loadtohive-build-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#loadtohive-build;0.1-SNAPSHOT runtime produced in E:\3_Work\12_spark_from_local_to_parq\loadtohive\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-loadtohive-build-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#loadtohive-build;0.1-SNAPSHOT test produced in E:\3_Work\12_spark_from_local_to_parq\loadtohive\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-loadtohive-build-test.xml[0m
@@ -8133,5 +8133,5 @@
 [0m[[0mdebug[0m] [0m	report for default#loadtohive-build;0.1-SNAPSHOT docs produced in E:\3_Work\12_spark_from_local_to_parq\loadtohive\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-loadtohive-build-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#loadtohive-build;0.1-SNAPSHOT pom produced in E:\3_Work\12_spark_from_local_to_parq\loadtohive\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-loadtohive-build-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#loadtohive-build;0.1-SNAPSHOT scala-tool produced in E:\3_Work\12_spark_from_local_to_parq\loadtohive\project\target\scala-2.10\sbt-0.13\resolution-cache\reports\default-loadtohive-build-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (2303ms resolve - 181ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (3955ms resolve - 319ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

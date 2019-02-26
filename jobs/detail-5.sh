@@ -16,7 +16,7 @@ then
       --supervise	
       --executor-memory 12g 
       --num-executors 16 
-      --executor-cores 4 
+      --executor-cores 6
       --files /opt/client/Spark/scripts/moveToParquet/auth/user.keytab 
       --conf 'spark.executor.extraJavaOptions=-Dlog4j.configuration=log4j.properties' 
       --conf 'spark.driver.extraJavaOptions=-Dlog4j.configuration=./log4.properties' 

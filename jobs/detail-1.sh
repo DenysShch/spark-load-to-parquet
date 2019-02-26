@@ -12,10 +12,10 @@ then
       sparkRun="spark-submit 
       --master yarn 
       --deploy-mode cluster 
-      --driver-memory 12g 
+      --driver-memory 16g
       --supervise	
       --executor-memory 12g 
-      --num-executors 8 
+      --num-executors 10
       --executor-cores 4 
       --files /opt/client/Spark/scripts/moveToParquet/auth/user.keytab 
       --conf 'spark.executor.extraJavaOptions=-Dlog4j.configuration=log4j.properties' 

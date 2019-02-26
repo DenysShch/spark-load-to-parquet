@@ -7,7 +7,7 @@ lazy val root = (project in file(".")).
   )
 
 libraryDependencies ++= Seq(
-  "org.apache.spark" %% "spark-core" % "1.5.1" % "provided" excludeAll (ExclusionRule(organization = "javax.servlet")), 
+  "org.apache.spark" %% "spark-core" % "1.5.1" % "provided" excludeAll (ExclusionRule(organization = "javax.servlet")),
   "org.apache.spark" %% "spark-sql"  % "1.5.1" % "provided",
   "org.apache.hadoop" % "hadoop-common" % "2.7.2" % "provided",
   "org.apache.spark" %% "spark-hive" % "1.5.1" % "provided"

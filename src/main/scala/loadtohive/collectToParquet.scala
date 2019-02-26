@@ -57,15 +57,18 @@ object collectToParquet {
   def hadoopListFolders(directoryName: String, fs:FileSystem, buff:Int):List[String] = {
     var folderInfo = scala.collection.mutable.Map[Path, Int]()
     val folders = fs.listStatus(new Path(directoryName))
-    folders.filter(_ != folders.map(_.getPath).last).foreach( f => {
-      folderInfo +=  f.getPath -> (fs.getContentSummary(f.getPath).getLength / 1000000).toInt
+    folders.foreach( f => {
+      lazy val lastFolder = folders.map(_.getPath).last
+      val rollingPath = f.getPath
+      if (fs.getContentSummary(rollingPath).getFileCount > 0  && lastFolder != rollingPath && !fs.exists(new Path(rollingPath + "/_temporary"))){
+        folderInfo += rollingPath -> (fs.getContentSummary(rollingPath).getLength / 1000000).toInt
+      }
     })
     val res:ArrayBuffer[String] = ArrayBuffer.empty[String]
     folderInfo.foldLeft(0)((accum, element) => {
       if (accum <= buff){res += element._1.toString + "/part*"}
       accum + element._2
     })
-    //res.sorted.foreach(println)
     res.sorted.toList
   }
 
@@ -88,7 +91,7 @@ object collectToParquet {
   def main(args: Array[String]): Unit = {
     //Init spark context
     val appName = args(1).toString
-    val conf = new SparkConf().setAppName(appName)
+    val conf = new SparkConf().setAppName(appName).set("spark.speculation","false")
     val sc = new SparkContext(conf)
     val sqlc = new org.apache.spark.sql.hive.HiveContext(sc)
     sqlc.setConf("spark.sql.parquet.compression.codec.", "snappy")
