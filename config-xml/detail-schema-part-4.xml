@@ -1,268 +1,239 @@
 <data>
     <table tablename = "DETAIL_CDR_GTPV2"  path = "hdfs:///local-filestream/DETAIL_CDR_GTPV2" schema="detail" numPartitions="48" coalesce="999" fileBufferSizeInMB="55000">
-        <field name="sid"  type = "string"  />
+        <field name="sid"  type = "bigint"  />
         <field name="protocol_id"  type = "int"  />
-        <field name="procedure_id"  type = "string"  />
-        <field name="probeid"  type = "int"  />
-        <field name="encrypt_version"  type = "int"  />
+        <field name="procedure_id"  type = "bigint"  />
+        <field name="probeid"  type = "bigint"  />
+        <field name="encrypt_version"  type = "string"  />
         <field name="interfaceid"  type = "int"  />
         <field name="imsi"  type = "string"  />
         <field name="msisdn"  type = "string"  />
         <field name="imei"  type = "string"  />
         <field name="ms_ip"  type = "string"  />
         <field name="tmsi"  type = "string"  />
-        <field name="roaming_type"  type = "int"  />
-        <field name="roam_direction"  type = "int"  />
+        <field name="roaming_type"  type = "string"  />
+        <field name="roam_direction"  type = "string"  />
         <field name="homemcc"  type = "string"  />
         <field name="homemnc"  type = "string"  />
-        <field name="homeproid"  type = "int"  />
-        <field name="homeareaid"  type = "int"  />
-        <field name="rat"  type = "int"  />
+        <field name="homeproid"  type = "string"  />
+        <field name="homeareaid"  type = "string"  />
+        <field name="rat"  type = "bigint"  />
         <field name="mcc"  type = "string"  />
         <field name="mnc"  type = "string"  />
         <field name="lai"  type = "string"  />
         <field name="rai_tai"  type = "string"  />
         <field name="sai_cgi_ecgi"  type = "string"  />
         <field name="apn"  type = "string"  />
-        <field name="refid"  type = "string"  />
-        <field name="proc_type"  type = "int"  />
+        <field name="refid"  type = "bigint"  />
+        <field name="proc_type"  type = "string"  />
         <field name="mme_sig_ip"  type = "string"  />
         <field name="sgw_sig_ip"  type = "string"  />
         <field name="pgw_sig_ip"  type = "string"  />
         <field name="mme_id"  type = "int"  />
         <field name="sgw_id"  type = "int"  />
-        <field name="pgw_id"  type = "int"  />
+        <field name="pgw_id"  type = "string"  />
         <field name="enodeb_data_ip"  type = "string"  />
         <field name="sgw_data_ip"  type = "string"  />
         <field name="pgw_data_ip"  type = "string"  />
-        <field name="enodeb_data_teid"  type = "int"  />
-        <field name="mme_sig_teid"  type = "int"  />
-        <field name="sgw_sig_teid"  type = "int"  />
-        <field name="pgw_sig_teid"  type = "int"  />
-        <field name="sgw_data_teid"  type = "int"  />
-        <field name="pgw_data_teid"  type = "int"  />
-        <field name="sig_direction"  type = "int"  />
+        <field name="enodeb_data_teid"  type = "string"  />
+        <field name="mme_sig_teid"  type = "string"  />
+        <field name="sgw_sig_teid"  type = "string"  />
+        <field name="pgw_sig_teid"  type = "string"  />
+        <field name="sgw_data_teid"  type = "string"  />
+        <field name="pgw_data_teid"  type = "string"  />
+        <field name="sig_direction"  type = "string"  />
         <field name="trans_type"  type = "int"  />
         <field name="trans_req_time_sec"  type = "int"  />
         <field name="trans_req_time_msec"  type = "int"  />
         <field name="trans_rsp_time_sec"  type = "int"  />
         <field name="trans_rsp_time_msec"  type = "int"  />
-        <field name="trans_succed_flag"  type = "int"  />
-        <field name="trans_reselect_flag"  type = "int"  />
+        <field name="trans_succed_flag"  type = "bigint"  />
+        <field name="trans_reselect_flag"  type = "bigint"  />
         <field name="trans_cause"  type = "int"  />
-        <field name="lbi"  type = "int"  />
-        <field name="ebi"  type = "int"  />
+        <field name="lbi"  type = "string"  />
+        <field name="ebi"  type = "string"  />
         <field name="charge_type"  type = "string"  />
-        <field name="charge_id"  type = "int"  />
-        <field name="session_duration"  type = "int"  />
-        <field name="qos_updata_flag"  type = "int"  />
+        <field name="charge_id"  type = "string"  />
+        <field name="session_duration"  type = "string"  />
+        <field name="qos_updata_flag"  type = "string"  />
         <field name="reserved1"  type = "string"  />
-        <field name="reserved2"  type = "string"  />
+        <field name="reserved2"  type = "bigint"  />
         <field name="reserved3"  type = "string"  />
         <field name="reserved4"  type = "string"  />
         <field name="dst_mme_sig_ip"  type = "string"  />
-        <field name="dst_mme_id"  type = "int"  />
-        <field name="layer1id"  type = "int"  />
-        <field name="layer2id"  type = "int"  />
-        <field name="layer3id"  type = "int"  />
-        <field name="layer4id"  type = "int"  />
-        <field name="layer5id"  type = "int"  />
-        <field name="layer6id"  type = "int"  />
+        <field name="dst_mme_id"  type = "string"  />
+        <field name="layer1id"  type = "bigint"  />
+        <field name="layer2id"  type = "string"  />
+        <field name="layer3id"  type = "string"  />
+        <field name="layer4id"  type = "string"  />
+        <field name="layer5id"  type = "string"  />
+        <field name="layer6id"  type = "string"  />
         <field name="mbr_dl_neg"  type = "string"  />
         <field name="gbr_dl_neg"  type = "string"  />
         <field name="mbr_ul_neg"  type = "string"  />
         <field name="gbr_ul_neg"  type = "string"  />
-        <field name="qci_neg"  type = "int"  />
-        <field name="arp_neg"  type = "int"  />
+        <field name="qci_neg"  type = "string"  />
+        <field name="arp_neg"  type = "string"  />
         <field name="sv"  type = "string"  />
         <field name="imei_ciphertext"  type = "string"  />
-        <field name="prepaid_flag"  type = "int"  />
-        <field name="ps_to_cs_handover_flag"  type = "int"  />
-        <field name="pdn_type"  type = "int"  />
-        <field name="old_rat"  type = "int"  />
+        <field name="prepaid_flag"  type = "string"  />
+        <field name="ps_to_cs_handover_flag"  type = "string"  />
+        <field name="pdn_type"  type = "string"  />
+        <field name="old_rat"  type = "string"  />
         <field name="old_sai_cgi_ecgi"  type = "string"  />
         <field name="epdg_sig_ip"  type = "string"  />
         <field name="epdg_data_ip"  type = "string"  />
-        <field name="epdg_sig_teid"  type = "int"  />
-        <field name="epdg_data_teid"  type = "int"  />
-        <field name="ho_indication"  type = "int"  />
+        <field name="epdg_sig_teid"  type = "string"  />
+        <field name="epdg_data_teid"  type = "string"  />
+        <field name="ho_indication"  type = "string"  />
         <field name="ms_ip2"  type = "string"  />
         <field name="na"  type = "string"  />
     </table>
-    <table tablename = "DETAIL_CDR_S1MME"  path = "hdfs:///local-filestream/DETAIL_CDR_S1MME" schema="detail" numPartitions="32" coalesce="999" fileBufferSizeInMB="40000">
-        <field name="sid"  type = "string"  />
+    <table tablename = "DETAIL_CDR_GbIuPS"  path = "hdfs:///local-filestream/DETAIL_CDR_GbIuPS" schema="detail" numPartitions="25" coalesce="999" fileBufferSizeInMB="25000">
+        <field name="sid"  type = "bigint"  />
         <field name="protocol_id"  type = "int"  />
-        <field name="procedure_id"  type = "string"  />
+        <field name="procedure_id"  type = "bigint"  />
         <field name="probeid"  type = "int"  />
-        <field name="encrypt_version"  type = "int"  />
+        <field name="encrypt_version"  type = "string"  />
         <field name="interfaceid"  type = "int"  />
-        <field name="imsi"  type = "string"  />
-        <field name="msisdn"  type = "string"  />
-        <field name="imei"  type = "string"  />
+        <field name="imsi"  type = "bigint"  />
+        <field name="msisdn"  type = "int"  />
+        <field name="imei"  type = "bigint"  />
         <field name="ms_ip"  type = "string"  />
-        <field name="mtmsi"  type = "string"  />
-        <field name="roaming_type"  type = "int"  />
-        <field name="homemcc"  type = "string"  />
-        <field name="homemnc"  type = "string"  />
-        <field name="homeproid"  type = "int"  />
-        <field name="homeareaid"  type = "int"  />
-        <field name="rat"  type = "int"  />
-        <field name="mcc"  type = "string"  />
-        <field name="mnc"  type = "string"  />
+        <field name="ptmsi"  type = "string"  />
+        <field name="roaming_type"  type = "string"  />
+        <field name="homemcc"  type = "int"  />
+        <field name="homemnc"  type = "int"  />
+        <field name="homeproid"  type = "string"  />
+        <field name="homeareaid"  type = "string"  />
+        <field name="rat"  type = "bigint"  />
+        <field name="mcc"  type = "int"  />
+        <field name="mnc"  type = "int"  />
+        <field name="lai"  type = "string"  />
         <field name="rai_tai"  type = "string"  />
         <field name="sai_cgi_ecgi"  type = "string"  />
         <field name="apn"  type = "string"  />
-        <field name="refid"  type = "string"  />
+        <field name="refid"  type = "bigint"  />
         <field name="proc_type"  type = "int"  />
         <field name="proc_starttime"  type = "int"  />
         <field name="proc_starttime_msec"  type = "int"  />
         <field name="proc_endtime"  type = "int"  />
         <field name="proc_endtime_msec"  type = "int"  />
-        <field name="proc_succed_flag"  type = "int"  />
-        <field name="fir_fail_trans_prot"  type = "int"  />
-        <field name="fir_fail_trans"  type = "int"  />
-        <field name="fir_fail_cause_type"  type = "int"  />
-        <field name="fir_fail_cause"  type = "int"  />
-        <field name="mme_id"  type = "int"  />
+        <field name="proc_succed_flag"  type = "bigint"  />
+        <field name="proc_firfail_prot"  type = "string"  />
+        <field name="proc_firfail_trans"  type = "string"  />
+        <field name="proc_firfail_cause_type"  type = "int"  />
+        <field name="proc_firfail_cause"  type = "string"  />
+        <field name="sgsn_id"  type = "int"  />
         <field name="ran_ne_id"  type = "int"  />
-        <field name="mme_sig_ip"  type = "string"  />
+        <field name="sgsn_sig_ip"  type = "string"  />
         <field name="ran_ne_sig_ip"  type = "string"  />
-        <field name="sgw_sigip_lst"  type = "string"  />
-        <field name="pgw_sigip_lst"  type = "string"  />
-        <field name="emm_trans_type"  type = "int"  />
-        <field name="emm_trans_sub_type"  type = "int"  />
-        <field name="emm_dierection"  type = "int"  />
-        <field name="emm_req_time_sec"  type = "int"  />
-        <field name="emm_req_time_msec"  type = "int"  />
-        <field name="emm_end_time_sec"  type = "int"  />
-        <field name="emm_end_time_msec"  type = "int"  />
-        <field name="emm_req_succed_flag"  type = "int"  />
-        <field name="emm_req_retrans_flag"  type = "int"  />
-        <field name="emm_cause"  type = "int"  />
-        <field name="poweroff_flag"  type = "int"  />
-        <field name="bearer_active_flag"  type = "int"  />
-        <field name="active_flag"  type = "int"  />
-        <field name="old_mcc"  type = "string"  />
-        <field name="old_mnc"  type = "string"  />
+        <field name="sgsn_sigip_lst"  type = "string"  />
+        <field name="ggsn_sigip_lst"  type = "string"  />
+        <field name="network_req_pdp_type"  type = "string"  />
+        <field name="req_pdpact_time_sec"  type = "string"  />
+        <field name="req_pdpact_time_msec"  type = "string"  />
+        <field name="req_pdpact_succed_flag"  type = "string"  />
+        <field name="req_pdpact_timeout_flag"  type = "string"  />
+        <field name="paging_req_time_sec"  type = "string"  />
+        <field name="paging_req_time_msec"  type = "string"  />
+        <field name="paging_rsp_time_sec"  type = "string"  />
+        <field name="paging_rsp_time_msec"  type = "string"  />
+        <field name="paging_ps_succed_flag"  type = "string"  />
+        <field name="paging_ps_reselect_flag"  type = "string"  />
+        <field name="paging_ps_timeout_flag"  type = "string"  />
+        <field name="mm_tran_type"  type = "int"  />
+        <field name="mm_trans_sub_type"  type = "bigint"  />
+        <field name="mm_trans_direction"  type = "bigint"  />
+        <field name="mm_trans_req_time_sec"  type = "int"  />
+        <field name="mm_trans_req_time_msec"  type = "int"  />
+        <field name="mm_trans_rsp_time_sec"  type = "int"  />
+        <field name="mm_trans_rsp_time_msec"  type = "int"  />
+        <field name="mm_trans_succed_flag"  type = "bigint"  />
+        <field name="mm_trans_reselect_flag"  type = "bigint"  />
+        <field name="mm_trans_cause"  type = "string"  />
+        <field name="poweroff_flag"  type = "string"  />
+        <field name="rau_with_pdp_flag"  type = "bigint"  />
+        <field name="rau_category"  type = "bigint"  />
+        <field name="old_mcc"  type = "int"  />
+        <field name="old_mnc"  type = "int"  />
+        <field name="old_lai"  type = "string"  />
         <field name="old_rai_tai"  type = "string"  />
         <field name="old_sai_cgi_ecgi"  type = "string"  />
-        <field name="identity_req_time_sec"  type = "int"  />
-        <field name="identity_req_time_msec"  type = "int"  />
-        <field name="identity_emd_time_sec"  type = "int"  />
-        <field name="identity_emd_time_msec"  type = "int"  />
-        <field name="identity_succed_flag"  type = "int"  />
-        <field name="identity_retrans_flag"  type = "int"  />
-        <field name="identity_cause"  type = "int"  />
-        <field name="auth_req_time_sec"  type = "int"  />
-        <field name="auth_req_time_msec"  type = "int"  />
-        <field name="auth_end_time_sec"  type = "int"  />
-        <field name="auth_end_time_msec"  type = "int"  />
-        <field name="auth_succed_flag"  type = "int"  />
-        <field name="auth_retrans_flag"  type = "int"  />
-        <field name="auth_rej_emm_cause"  type = "int"  />
+        <field name="identity_req_time"  type = "string"  />
+        <field name="identity_req_time_msec"  type = "string"  />
+        <field name="identity_rsp_time"  type = "string"  />
+        <field name="identity_rsp_time_msec"  type = "string"  />
+        <field name="identity_cause"  type = "string"  />
+        <field name="identity_succed_flag"  type = "string"  />
+        <field name="identity_reselect_flag"  type = "string"  />
+        <field name="auth_cipher_req_time_sec"  type = "string"  />
+        <field name="auth_cipher_req_time_msec"  type = "string"  />
+        <field name="auth_cipher_rsp_time_sec"  type = "string"  />
+        <field name="auth_cipher_rsp_time_msec"  type = "string"  />
+        <field name="auth_cipher_succeed_flag"  type = "string"  />
+        <field name="auth_cipher_reselect_flag"  type = "string"  />
+        <field name="auth_cipher_cause"  type = "string"  />
         <field name="security_mode_time"  type = "int"  />
         <field name="security_mode_time_msec"  type = "int"  />
         <field name="security_mode_cmpt_time"  type = "int"  />
         <field name="security_mode_cmpt_time_msec"  type = "int"  />
-        <field name="security_mode_succed_flag"  type = "int"  />
-        <field name="security_mode_reselect_flag"  type = "int"  />
-        <field name="security_mode_cause"  type = "int"  />
-        <field name="esm_ue_trans_type"  type = "int"  />
-        <field name="esm_ue_req_time_sec"  type = "int"  />
-        <field name="esm_ue_req_time_msec"  type = "int"  />
-        <field name="esm_ue_end_time_sec"  type = "int"  />
-        <field name="esm_ue_end_time_msec"  type = "int"  />
-        <field name="esm_ue_succed_flag"  type = "int"  />
-        <field name="esm_ue_retrans_flag"  type = "int"  />
-        <field name="esm_ue_rej_cause"  type = "int"  />
-        <field name="esm_ue_ebi"  type = "int"  />
-        <field name="esm_ue_lbi"  type = "int"  />
-        <field name="esm_ue_esmcause"  type = "int"  />
-        <field name="esm_nw_trans_type"  type = "int"  />
-        <field name="esm_nw_req_time_sec"  type = "int"  />
-        <field name="esm_nw_req_time_msec"  type = "int"  />
-        <field name="esm_nw_end_time_sec"  type = "int"  />
-        <field name="esm_nw_end_time_msec"  type = "int"  />
-        <field name="esm_nw_succed_flag"  type = "int"  />
-        <field name="esm_nw_retrans_flag"  type = "int"  />
-        <field name="esm_nw_rej_cause"  type = "int"  />
-        <field name="esm_nw_ebi"  type = "int"  />
-        <field name="esm_nw_lbi"  type = "int"  />
-        <field name="esm_nw_esmcause"  type = "int"  />
-        <field name="paging_req_time_sec"  type = "int"  />
-        <field name="paging_req_time_msec"  type = "int"  />
-        <field name="paging_rsp_time_sec"  type = "int"  />
-        <field name="paging_rsp_time_msec"  type = "int"  />
-        <field name="paging_req_succed_flag"  type = "int"  />
-        <field name="paging_req_retrans_flag"  type = "int"  />
-        <field name="paging_req_timeout_flag"  type = "int"  />
-        <field name="s1ap_trans_type"  type = "int"  />
-        <field name="s1ap_req_time_sec"  type = "int"  />
-        <field name="s1ap_req_time_msec"  type = "int"  />
-        <field name="s1ap_end_time_sec"  type = "int"  />
-        <field name="s1ap_end_time_msec"  type = "int"  />
-        <field name="s1ap_succed_flag"  type = "int"  />
-        <field name="s1ap_retrans_flag"  type = "int"  />
-        <field name="s1ap_cause_type"  type = "int"  />
-        <field name="s1ap_cause"  type = "int"  />
-        <field name="erab_count_to_be_setup"  type = "int"  />
-        <field name="erab_count_failed_setup"  type = "int"  />
-        <field name="erab_count_succeed_setup"  type = "int"  />
+        <field name="security_mode_succed_flag"  type = "bigint"  />
+        <field name="security_mode_reselect_flag"  type = "bigint"  />
+        <field name="security_mode_cause"  type = "string"  />
+        <field name="pdp_trans_type"  type = "string"  />
+        <field name="secondary_pdp_flag"  type = "string"  />
+        <field name="pdp_req_time"  type = "string"  />
+        <field name="pdp_req_time_msec"  type = "string"  />
+        <field name="pdp_rsp_time"  type = "string"  />
+        <field name="pdp_rsp_time_msec"  type = "string"  />
+        <field name="pdp_succeed_flag"  type = "string"  />
+        <field name="pdp_fail_cause"  type = "string"  />
+        <field name="pdpaddress_null_flag"  type = "string"  />
+        <field name="pdp_trans_direction"  type = "string"  />
+        <field name="assn_time"  type = "string"  />
+        <field name="assn_time_msec"  type = "string"  />
+        <field name="assn_cmpt_time"  type = "string"  />
+        <field name="assn_cmpt_time_msec"  type = "string"  />
+        <field name="assn_succed_flag"  type = "string"  />
+        <field name="assn_cause"  type = "string"  />
+        <field name="radio_status_time"  type = "string"  />
+        <field name="radio_status_time_ms"  type = "string"  />
+        <field name="radio_status_cause"  type = "string"  />
+        <field name="llc_discard_time"  type = "string"  />
+        <field name="llc_discard_time_ms"  type = "string"  />
+        <field name="llc_frame_num"  type = "string"  />
+        <field name="llc_frame_oct"  type = "string"  />
+        <field name="discard_frame_num"  type = "string"  />
+        <field name="discard_frame_oct"  type = "string"  />
         <field name="reserved1"  type = "string"  />
-        <field name="reserved2"  type = "string"  />
-        <field name="reserved3"  type = "string"  />
-        <field name="reserved4"  type = "string"  />
-        <field name="csfb_ind"  type = "int"  />
-        <field name="s1ap_trans_direction"  type = "int"  />
-        <field name="layer1id"  type = "int"  />
+        <field name="reserved2"  type = "bigint"  />
+        <field name="reserved3"  type = "bigint"  />
+        <field name="reserved4"  type = "bigint"  />
+        <field name="ho_refer_number"  type = "string"  />
+        <field name="layer1id"  type = "bigint"  />
         <field name="layer2id"  type = "int"  />
-        <field name="layer3id"  type = "int"  />
-        <field name="layer4id"  type = "int"  />
-        <field name="layer5id"  type = "int"  />
-        <field name="layer6id"  type = "int"  />
-        <field name="ue_srvcc_capability"  type = "int"  />
-        <field name="csfb_response"  type = "int"  />
-        <field name="tmsi"  type = "string"  />
-        <field name="old_tmsi"  type = "string"  />
-        <field name="lac"  type = "string"  />
-        <field name="cscall_ttime"  type = "int"  />
-        <field name="cscall_ttime_ms"  type = "int"  />
+        <field name="layer3id"  type = "string"  />
+        <field name="layer4id"  type = "string"  />
+        <field name="layer5id"  type = "string"  />
+        <field name="layer6id"  type = "string"  />
+        <field name="rab_type"  type = "string"  />
         <field name="mbr_dl_neg"  type = "string"  />
         <field name="gbr_dl_neg"  type = "string"  />
         <field name="mbr_ul_neg"  type = "string"  />
         <field name="gbr_ul_neg"  type = "string"  />
-        <field name="qci_neg"  type = "int"  />
-        <field name="arp_neg"  type = "int"  />
-        <field name="sv"  type = "string"  />
-        <field name="mmegi"  type = "int"  />
-        <field name="mmec"  type = "int"  />
-        <field name="enb_ue_s1ap_id"  type = "int"  />
-        <field name="mme_ue_s1ap_id"  type = "int"  />
+        <field name="sv"  type = "bigint"  />
         <field name="imei_ciphertext"  type = "string"  />
-        <field name="prepaid_flag"  type = "int"  />
-        <field name="ims_voice_support"  type = "int"  />
-        <field name="bear_tft"  type = "string"  />
-        <field name="bear_radio_priority"  type = "int"  />
-        <field name="bear_ul_apn_ambr"  type = "string"  />
-        <field name="bear_dl_apn_ambr"  type = "string"  />
-        <field name="ue_context_status"  type = "int"  />
-        <field name="ue_voice_preference"  type = "int"  />
-        <field name="pdn_type"  type = "int"  />
-        <field name="old_guti_type"  type = "int"  />
-        <field name="user_category"  type = "int"  />
-        <field name="rls_req_type"  type = "int"  />
-        <field name="rls_req_time_sec"  type = "int"  />
-        <field name="rls_req_time_msec"  type = "int"  />
-        <field name="rls_trans_type"  type = "int"  />
-        <field name="rls_trans_req_time_sec"  type = "int"  />
-        <field name="rls_trans_req_time_msec"  type = "int"  />
-        <field name="rls_trans_rsp_time_sec"  type = "int"  />
-        <field name="rls_trans_rsp_time_msec"  type = "int"  />
-        <field name="rls_trans_succed_flag"  type = "int"  />
-        <field name="rls_trans_cause_type"  type = "int"  />
-        <field name="rls_trans_cause"  type = "int"  />
-        <field name="request_type"  type = "int"  />
-        <field name="ms_ip2"  type = "string"  />
+        <field name="prepaid_flag"  type = "string"  />
+        <field name="ptmsi_signature"  type = "string"  />
+        <field name="nri"  type = "int"  />
+        <field name="ranap_trans_type"  type = "string"  />
+        <field name="ranap_trans_req_time_sec"  type = "string"  />
+        <field name="ranap_trans_req_time_msec"  type = "string"  />
+        <field name="ranap_trans_rsp_time_sec"  type = "string"  />
+        <field name="ranap_trans_rsp_time_msec"  type = "string"  />
+        <field name="ranap_trans_succed_flag"  type = "string"  />
+        <field name="ranap_trans_cause"  type = "string"  />
         <field name="na"  type = "string"  />
-    </table>
+     </table>
 </data>

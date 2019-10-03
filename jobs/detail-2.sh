@@ -1,5 +1,5 @@
 
-INIT="source /opt/client/bigdata_env &&  kinit -kt /opt/client/Spark/scripts/moveToParquet/auth/user.keytab sparkuser"
+INIT="source /opt/client/bigdata_env &&  kinit -kt /home/xdrloader/auth/user.keytab xdrloader"
 COMMAND="jps -lm | grep -i detail-schema-part-2.xml"
 
 eval $INIT
@@ -12,17 +12,17 @@ then
       sparkRun="spark-submit 
       --master yarn 
       --deploy-mode cluster 
-      --driver-memory 16g
+      --driver-memory 10g 
       --supervise	
-      --executor-memory 12g
-      --num-executors 12
+      --executor-memory 4g 
+      --num-executors 10 
       --executor-cores 4 
-      --files /opt/client/Spark/scripts/moveToParquet/auth/user.keytab 
+      --files /home/xdrloader/auth/user.keytab 
       --conf 'spark.executor.extraJavaOptions=-Dlog4j.configuration=log4j.properties' 
       --conf 'spark.driver.extraJavaOptions=-Dlog4j.configuration=./log4.properties' 
-      --conf 'spark.network.timeout=20000s' 
+      --conf 'spark.network.timeout=60000s' 
       --conf 'spark.serializer=org.apache.spark.serializer.KryoSerializer' 
-      /opt/client/Spark/scripts/moveToParquet/load-to-hive-parq-assembly-1.0.jar hdfs:///spark-scripts-config/load-to-hive/detail-schema-part-2.xml convert-detail-2
+      /home/xdrloader/projects/moveToParquet/load-to-hive-parq-assembly-1.0.jar hdfs:///spark-scripts-config/load-to-hive/detail-schema-part-2.xml convert-to-parquet-DETAIL-2
       " 
       eval $sparkRun
 fi

@@ -2,7 +2,7 @@ lazy val root = (project in file(".")).
   settings(
     name := "load-to-hive-parq",
     version := "1.0",
-    scalaVersion := "2.10.6",
+    scalaVersion := "2.10.7",
     mainClass in Compile := Some("loadtohive.collectToParquet")        
   )
 

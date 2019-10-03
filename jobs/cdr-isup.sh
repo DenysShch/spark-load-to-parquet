@@ -12,17 +12,17 @@ then
       sparkRun="spark-submit 
       --master yarn 
       --deploy-mode cluster 
-      --driver-memory 8g
+      --driver-memory 24g 
       --supervise	
-      --executor-memory 5g 
-      --num-executors 10 
-      --executor-cores 4 
+      --executor-memory 12g 
+      --num-executors 12 
+      --executor-cores 6 
       --files /home/xdrloader/auth/user.keytab
       --conf 'spark.executor.extraJavaOptions=-Dlog4j.configuration=/home/xdrloader/projects/moveToParquet/conf/log4j.properties' 
       --conf 'spark.driver.extraJavaOptions=-Dlog4j.configuration=/home/xdrloader/projects/moveToParquet/conf/log4.properties' 
       --conf 'spark.network.timeout=60000s' 
       --conf 'spark.serializer=org.apache.spark.serializer.KryoSerializer'
-      /home/xdrloader/projects/moveToParquet/load-to-hive-parq-assembly-1.0.jar hdfs:///spark-scripts-config/load-to-hive/cdr-schema.xml convert-to-parquet-CDR >> /home/xdrloader/projects/moveToParquet/log/parquet-convertor-log.txt
+      /home/xdrloader/projects/moveToParquet/load-to-hive-parq-assembly-1.0.jar hdfs:///spark-scripts-config/load-to-hive/cdr-schema_custom.xml convert-to-parquet-CDR
       " 
       eval $sparkRun
 fi

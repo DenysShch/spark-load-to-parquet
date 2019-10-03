@@ -51,7 +51,8 @@ object collectToParquet {
           case _        =>  throw new NoSuchElementException
         }
       }
-      .repartition(numPart).write.mode(SaveMode.Append).parquet(outputPath)
+      .write.mode(SaveMode.Append).parquet(outputPath)
+    //.repartition(numPart).write.mode(SaveMode.Append).parquet(outputPath)
   }
 
   def hadoopListFolders(directoryName: String, fs:FileSystem, buff:Int):List[String] = {
@@ -67,6 +68,24 @@ object collectToParquet {
     val res:ArrayBuffer[String] = ArrayBuffer.empty[String]
     folderInfo.foldLeft(0)((accum, element) => {
       if (accum <= buff){res += element._1.toString + "/part*"}
+      accum + element._2
+    })
+    res.sorted.toList
+  }
+
+  def hadoopListFiles(directoryName: String, fs:FileSystem, buff:Int):List[String] = {
+
+    val folders = fs.listStatus(new Path(directoryName))
+    val folderInfo:Map[Path, Int] = folders
+      .filter(f => f.isFile)
+      .filter(f => ! f.getPath.getName.contains("_temporary"))
+      .map(i => (i.getPath, (i.getLen / 1000000).toInt))
+      .sortBy(s => s._1.toString)
+      .toMap
+
+    val res:ArrayBuffer[String] = ArrayBuffer.empty[String]
+    folderInfo.foldLeft(0)((accum, element) => {
+      if (accum <= buff){res += element._1.toString}
       accum + element._2
     })
     res.sorted.toList
@@ -136,8 +155,9 @@ object collectToParquet {
           val schema = StructureGenerator.createStructType(statesName(strItem), statesType(strItem))
           val typeSchema = statesMain(strItem)
           val hivePartition = createPartitionDir(strItem, fs, dbSchema(strItem), numPartitions(strItem))
-          val hdfsDirs = hadoopListFolders(statesFilePatch(item).toString, fs, fileBufferSizeInMB(strItem))
+          val hdfsDirs = hadoopListFiles(statesFilePatch(item).toString, fs, fileBufferSizeInMB(strItem))
           worker(sc, sqlc, schema, typeSchema, hdfsDirs, hivePartition, numPartitions(strItem), fileCoalesce(strItem))
+          sqlc.sql("set role admin")
           sqlc.sql("MSCK REPAIR TABLE " + dbSchema(strItem) + "." + strItem)
           hdfsDirs.map(deleteBuffer += _)
         }
