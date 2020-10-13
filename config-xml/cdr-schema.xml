@@ -788,4 +788,19 @@
         <field name="callee_prepaid_flag"  type = "string"  />
         <field name="na"  type = "string"  />
     </table>
+    <table tablename = "DICT_RAW_PROT_MAPPING"  path = "hdfs:///local-filestream/DICT_RAW_PROT_MAPPING" schema="dict"  numPartitions="1" coalesce="1" fileBufferSizeInMB="5000">
+        <field name="id"  type = "int"  />
+        <field name="raw_prot"  type = "int"  />
+        <field name="raw_prot_name"  type = "string"  />
+        <field name="inf_type"  type = "int"  />
+        <field name="prot_category"  type = "string"  />
+        <field name="Prot"  type = "int"  />
+        <field name="Sp"  type = "int"  />
+        <field name="app_id"  type = "int"  />
+        <field name="def_raw_prot_name"  type = "string"  />
+        <field name="def_prot"  type = "int"  />
+        <field name="def_sp"  type = "string"  />
+        <field name="def_app_id"  type = "int"  />
+        <field name="na"  type = "string"  />
+    </table>
 </data>

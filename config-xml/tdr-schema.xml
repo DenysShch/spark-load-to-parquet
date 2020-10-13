@@ -1068,6 +1068,7 @@
         <field name="callresult"  type = "int"  />
         <field name="bcsm_rel_cause"  type = "string"  />
         <field name="charging_type"  type = "string"  />
+        <field name="servicekey"  type = "string"  />
         <field name="na"  type = "string"  />
     </table>
 </data>

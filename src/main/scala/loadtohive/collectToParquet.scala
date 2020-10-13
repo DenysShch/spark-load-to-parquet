@@ -38,7 +38,7 @@ object collectToParquet {
   def worker(sc: SparkContext, sqlc:SQLContext, schema:StructType , typeSchema:Map[String, String], listOfPaths:List[String], outputPath:String, numPart:Int, fileCoalesce:Int):Unit = {
     val dirs = listOfPaths.mkString(",")
     val lines = sc.textFile(dirs)//.repartition(numPart)//.coalesce(fileCoalesce
-    val rowRDD = lines.map(x => x.split("\\|", -1)).map(x => {Row.fromSeq(x)})
+    val rowRDD = lines.map(x => x.split("\\|", -1)).filter(f => f.length > 1).map(x => {Row.fromSeq(x)})
     val tempDF = sqlc.createDataFrame(rowRDD, schema)
     tempDF
       .columns
@@ -51,8 +51,7 @@ object collectToParquet {
           case _        =>  throw new NoSuchElementException
         }
       }
-      .write.mode(SaveMode.Append).parquet(outputPath)
-    //.repartition(numPart).write.mode(SaveMode.Append).parquet(outputPath)
+    .repartition(numPart).write.mode(SaveMode.Append).parquet(outputPath)
   }
 
   def hadoopListFolders(directoryName: String, fs:FileSystem, buff:Int):List[String] = {
