@@ -1,0 +1,47 @@
+CREATE TABLE
+    tdr.tdr_inap(
+        starttime int,
+        millisec int,
+        srvstat string,
+        ni int,
+        opc int,
+        ogt string,
+        dpc int,
+        dgt bigint,
+        calling_partys_category string,
+        callerno string,
+        calledno string,
+        calledusrno string,
+        callerimsi string,
+        calledimsi string,
+        calledchange string,
+        erbtype int,
+        call_duration bigint,
+        end_time int,
+        firfailtime string,
+        pd int,
+        reltype int,
+        cause int,
+        roam_direction int,
+        homemcc string,
+        homemnc string,
+        visitcc string,
+        visitndc string,
+        lnksrcip bigint,
+        lnksrcport int,
+        lnkdestip bigint,
+        lnkdestport int,
+        callernotype string,
+        callednotype string,
+        otid string,
+        dtid string,
+        callresult string,
+        bcsm_rel_cause string,
+        charging_type string,
+        servicekey string,
+        na string
+)
+    PARTITIONED BY (
+    dt string
+)
+STORED AS PARQUET;

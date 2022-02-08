@@ -1,0 +1,27 @@
+{
+  "name":           "TDR_H248_CTX",
+  "path":           "hdfs:///local-filestream/TDR_H248_CTX",
+  "sink":           "hdfs:///user/hive/warehouse/tdr.db/tdr_h248_ctx",
+  "schema":         "tdr",
+  "partitions":     700,
+  "fileBuffer":     1000,
+  "partitionField": "starttime",
+  "data":  [
+    {"name": "cdrid", "type":   "string" },
+    {"name": "starttime", "type":   "int" },
+    {"name": "millisec", "type":   "int" },
+    {"name": "callerno", "type":   "string" },
+    {"name": "calledno", "type":   "string" },
+    {"name": "end_time", "type":   "int" },
+    {"name": "reserved1", "type":   "string" },
+    {"name": "reserved2", "type":   "string" },
+    {"name": "reserved3", "type":   "string" },
+    {"name": "reserved4", "type":   "string" },
+    {"name": "filelocation", "type":   "string" },
+    {"name": "offset_dsi", "type":   "string" },
+    {"name": "probeid", "type":   "string" },
+    {"name": "imsi", "type":   "string" },
+    {"name": "refid", "type":   "string" },
+    {"name": "na", "type":   "string" }
+  ]
+}

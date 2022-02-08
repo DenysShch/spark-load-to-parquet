@@ -1,0 +1,32 @@
+{
+  "name":           "TDR_H248_TONE",
+  "path":           "hdfs:///local-filestream/TDR_H248_TONE",
+  "sink":           "hdfs:///user/hive/warehouse/tdr.db/tdr_h248_tone",
+  "schema":         "tdr",
+  "partitions":     700,
+  "fileBuffer":     1000,
+  "partitionField": "starttime",
+  "data":  [
+    {"name": "cdrid", "type":   "string"},
+    {"name": "termcdrid", "type":   "string"},
+    {"name": "starttime", "type":   "string"},
+    {"name": "millisec", "type":   "string"},
+    {"name": "result", "type":   "string"},
+    {"name": "ni", "type":   "string"},
+    {"name": "mgwdpc", "type":   "string"},
+    {"name": "mscdpc", "type":   "string"},
+    {"name": "toneid", "type":   "string"},
+    {"name": "mgwipaddr", "type":   "string"},
+    {"name": "mscipaddr", "type":   "string"},
+    {"name": "failcause", "type":   "string"},
+    {"name": "mgwport", "type":   "string"},
+    {"name": "mscport", "type":   "string"},
+    {"name": "layer1id", "type":   "string"},
+    {"name": "layer2id", "type":   "string"},
+    {"name": "layer3id", "type":   "string"},
+    {"name": "layer4id", "type":   "string"},
+    {"name": "layer5id", "type":   "string"},
+    {"name": "layer6id", "type":   "string"},
+    {"name": "na", "type":   "string"}
+    ]
+}

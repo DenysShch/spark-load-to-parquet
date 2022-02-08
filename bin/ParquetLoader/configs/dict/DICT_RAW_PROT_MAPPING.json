@@ -1,0 +1,24 @@
+{
+  "name":           "DICT_RAW_PROT_MAPPING",
+  "path":           "hdfs:///local-filestream/DICT_RAW_PROT_MAPPING",
+  "sink":           "hdfs:///user/hive/warehouse/dict.db/dict_raw_prot_mapping",
+  "schema":         "dict",
+  "partitions":     700,
+  "fileBuffer":     1000,
+  "partitionField": "-1",
+  "data":  [
+    {"name": "id", "type": "int"},
+    {"name": "raw_prot", "type": "int"},
+    {"name": "raw_prot_name", "type": "string"},
+    {"name": "inf_type", "type": "int"},
+    {"name": "prot_category", "type": "string"},
+    {"name": "Prot", "type": "int"},
+    {"name": "Sp", "type": "int"},
+    {"name": "app_id", "type": "int"},
+    {"name": "def_raw_prot_name", "type": "string"},
+    {"name": "def_prot", "type": "int"},
+    {"name": "def_sp", "type": "string"},
+    {"name": "def_app_id", "type": "int"},
+    {"name": "na", "type": "string"}
+    ]
+}

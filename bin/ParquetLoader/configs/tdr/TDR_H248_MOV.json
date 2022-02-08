@@ -1,0 +1,18 @@
+{
+  "name":           "TDR_H248_MOV",
+  "path":           "hdfs:///local-filestream/TDR_H248_MOV",
+  "sink":           "hdfs:///user/hive/warehouse/tdr.db/tdr_h248_mov",
+  "schema":         "tdr",
+  "partitions":     700,
+  "fileBuffer":     1000,
+  "partitionField": "starttime",
+  "data":  [
+    {"name": "cdrid", "type":   "string"},
+    {"name": "starttime", "type":   "string"},
+    {"name": "millisec", "type":   "string"},
+    {"name": "result", "type":   "string"},
+    {"name": "termcdrid", "type":   "string"},
+    {"name": "srccxtcdrid", "type":   "string"},
+    {"name": "destcxtcdrid", "type":   "string"},
+    {"name": "na", "type":   "string"}
+  ]}
