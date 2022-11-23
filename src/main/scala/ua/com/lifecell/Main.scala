@@ -4,12 +4,13 @@ import org.apache.hadoop.fs.{FileSystem, Path}
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.types.{DataType, IntegerType, LongType, StringType, StructField, StructType}
 import org.apache.spark.sql.{Row, SaveMode, SparkSession}
+
 import java.time.{Instant, LocalDateTime, ZoneId}
 import java.time.format.DateTimeFormatter
 import scala.collection.immutable.ListMap
+import scala.collection.parallel.{ParSeq, immutable}
 
 object Main {
-
 
   def convertTypes(value:String, valueIndex: Int, schemaList:List[String]):Either[String, Any] = {
     schemaList(valueIndex) match {
@@ -102,7 +103,21 @@ object Main {
   }
 
   def hadoopListFiles(directoryName: Path, fs:FileSystem, buff:Int = 1000):List[String] = {
-    fs.listStatus(directoryName)
+
+    def getTime(x: => Long):Long = x
+
+    //remove corrupted files
+    fs
+      .listStatus(directoryName)
+      .filter(f => f.isFile)
+      .filter(f => f.getLen <= 1)
+      .filter(f => getTime(System.currentTimeMillis()) - f.getModificationTime  > 1000000)
+      .map(i => i.getPath.toString)
+      .toList
+      .foreach(file => fs.delete(new Path(file), true))
+
+    fs
+      .listStatus(directoryName)
       .filter(f => f.isFile)
       .filter(f => !f.getPath.getName.contains("_temporary"))
       .map(i => i.getPath.toString)
@@ -119,6 +134,35 @@ object Main {
     }
   }
 
+  def readerWrapper(sp: SparkSession, files: List[String], schemaMap: ListMap[String, DataType],
+                    schemaList: List[String], outputPath: String, partitions: Int,
+                    partitionIndex: Int): Unit = {
+    try {
+      readLocalFiles(sp, files, schemaMap, schemaList, outputPath, partitions, partitionIndex)
+    } catch {
+      case e:Exception =>
+        println(s"Error ${e.getLocalizedMessage}, try file checking...")
+        val checkedFiles: immutable.ParSeq[Either[String, String]] = files.par.map(checker(sp, _))
+        val goodFiles = checkedFiles.toList.filter(_.isRight).map(_.right.get)
+        readLocalFiles(sp, goodFiles, schemaMap, schemaList, outputPath, partitions, partitionIndex)
+    }
+  }
+
+  def checker(sp: SparkSession, file: String): Either[String, String] = {
+      try {
+        val trigger = sp.sparkContext
+          .textFile(file)
+          .map(x => x.split("\\|", -1))
+          .count()
+        println(s"File $file is ok -> $trigger")
+        Right(file)
+      } catch {
+        case _: Exception =>
+          println(s"File is corrupted $file")
+          Left(file)
+      }
+  }
+
   def main(args: Array[String]): Unit = {
     val appConf = ConfigsParser.readConfig(args(0))
 
@@ -128,6 +172,7 @@ object Main {
       .config("spark.hadoop.mapred.output.compress", "true")
       .config("spark.hadoop.mapred.output.compression.codec", "org.apache.hadoop.io.compress.GzipCodec")
       .config("spark.hadoop.mapred.output.compression.type", "BLOCK")
+      .config("spark.sql.files.ignoreCorruptFiles", "true")
       .enableHiveSupport()
       .getOrCreate()
 
@@ -137,6 +182,7 @@ object Main {
 
     val fs = FileSystem.get(spark.sparkContext.hadoopConfiguration)
     spark.sqlContext.setConf("spark.sql.parquet.compression.codec","gzip")
+    spark.sqlContext.setConf("spark.sql.files.ignoreCorruptFiles", "true")
     spark.sqlContext.sql("set spark.sql.parquet.compression.codec=gzip")
 
     val listOfFiles = hadoopListFiles(new Path(appConf.path), fs, appConf.fileBuffer)
@@ -149,7 +195,7 @@ object Main {
     // partition index
     val partitionIndex: Int = appConf.getIndex
 
-    readLocalFiles(spark, listOfFiles, convertedSchema,
+    readerWrapper(spark, listOfFiles, convertedSchema,
       schemaList, appConf.sink, appConf.partitions, partitionIndex)
 
     deleteFile(listOfFiles, fs)
